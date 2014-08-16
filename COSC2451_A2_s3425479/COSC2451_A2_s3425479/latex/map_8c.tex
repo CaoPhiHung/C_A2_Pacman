@@ -1,0 +1,187 @@
+\hypertarget{map_8c}{\section{src/map.c File Reference}
+\label{map_8c}\index{src/map.\-c@{src/map.\-c}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}map.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}square.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$curses.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmap}{map} $\ast$ \hyperlink{map_8c_a08b97533cac25907d55ada10aa0663a1}{create\-\_\-map} (int inrow, int incol)
+\item 
+void \hyperlink{map_8c_a5ca3d8d5d1de033c5b21bc53f97a2767}{map\-\_\-edit} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, int row, int col, char value)
+\item 
+int \hyperlink{map_8c_aca6f953bdb05df3566fca577d0dc4112}{file\-Exist} (char $\ast$filename)
+\item 
+void \hyperlink{map_8c_a1e5519b006b9d17013452a0b277d4e6e}{map\-\_\-write} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, int num)
+\item 
+char $\ast$ \hyperlink{map_8c_a1e556d76510b9635b3fe6b3d6ddafb97}{map\-\_\-read\-\_\-string} (F\-I\-L\-E $\ast$fo, char $\ast$str, int $\ast$cap)
+\item 
+void \hyperlink{map_8c_a20d928639ebd51bbe5c162522f986456}{map\-\_\-read} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, char $\ast$filename, int num)
+\item 
+void \hyperlink{map_8c_af09ead40860db4b75ef043711a2977b0}{free\-\_\-col} (struct \hyperlink{structsquare}{square} $\ast$current\-\_\-node)
+\item 
+void \hyperlink{map_8c_a8a145e78c5ead00af03903ab47cc6eec}{free\-\_\-row} (struct \hyperlink{structsquare}{square} $\ast$current\-\_\-node)
+\item 
+void \hyperlink{map_8c_a997021ee7db23ab10f1a9631f892830d}{map\-\_\-free} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{map_8c_a08b97533cac25907d55ada10aa0663a1}{\index{map.\-c@{map.\-c}!create\-\_\-map@{create\-\_\-map}}
+\index{create\-\_\-map@{create\-\_\-map}!map.c@{map.\-c}}
+\subsubsection[{create\-\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf map}$\ast$ create\-\_\-map (
+\begin{DoxyParamCaption}
+\item[{int}]{inrow, }
+\item[{int}]{incol}
+\end{DoxyParamCaption}
+)}}\label{map_8c_a08b97533cac25907d55ada10aa0663a1}
+
+
+Definition at line 11 of file map.\-c.
+
+\hypertarget{map_8c_aca6f953bdb05df3566fca577d0dc4112}{\index{map.\-c@{map.\-c}!file\-Exist@{file\-Exist}}
+\index{file\-Exist@{file\-Exist}!map.c@{map.\-c}}
+\subsubsection[{file\-Exist}]{\setlength{\rightskip}{0pt plus 5cm}int file\-Exist (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}}\label{map_8c_aca6f953bdb05df3566fca577d0dc4112}
+to identify if the file exists 
+\begin{DoxyParams}{Parameters}
+{\em char} & filename of the map user is looking for to read \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file map.\-c.
+
+\hypertarget{map_8c_af09ead40860db4b75ef043711a2977b0}{\index{map.\-c@{map.\-c}!free\-\_\-col@{free\-\_\-col}}
+\index{free\-\_\-col@{free\-\_\-col}!map.c@{map.\-c}}
+\subsubsection[{free\-\_\-col}]{\setlength{\rightskip}{0pt plus 5cm}void free\-\_\-col (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{current\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{map_8c_af09ead40860db4b75ef043711a2977b0}
+in order to free the map's collums 
+\begin{DoxyParams}{Parameters}
+{\em current\-\_\-node} & type square \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 206 of file map.\-c.
+
+\hypertarget{map_8c_a8a145e78c5ead00af03903ab47cc6eec}{\index{map.\-c@{map.\-c}!free\-\_\-row@{free\-\_\-row}}
+\index{free\-\_\-row@{free\-\_\-row}!map.c@{map.\-c}}
+\subsubsection[{free\-\_\-row}]{\setlength{\rightskip}{0pt plus 5cm}void free\-\_\-row (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{current\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{map_8c_a8a145e78c5ead00af03903ab47cc6eec}
+in order to free the row's collums 
+\begin{DoxyParams}{Parameters}
+{\em current\-\_\-node} & type square \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 213 of file map.\-c.
+
+\hypertarget{map_8c_a5ca3d8d5d1de033c5b21bc53f97a2767}{\index{map.\-c@{map.\-c}!map\-\_\-edit@{map\-\_\-edit}}
+\index{map\-\_\-edit@{map\-\_\-edit}!map.c@{map.\-c}}
+\subsubsection[{map\-\_\-edit}]{\setlength{\rightskip}{0pt plus 5cm}void map\-\_\-edit (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{int}]{row, }
+\item[{int}]{col, }
+\item[{char}]{value}
+\end{DoxyParamCaption}
+)}}\label{map_8c_a5ca3d8d5d1de033c5b21bc53f97a2767}
+to put a character in a specific location on the map 
+\begin{DoxyParams}{Parameters}
+{\em map} & the struct map \\
+\hline
+{\em row} & the number of row \\
+\hline
+{\em col} & the number of cols \\
+\hline
+{\em value} & the value that user puts in the map \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file map.\-c.
+
+\hypertarget{map_8c_a997021ee7db23ab10f1a9631f892830d}{\index{map.\-c@{map.\-c}!map\-\_\-free@{map\-\_\-free}}
+\index{map\-\_\-free@{map\-\_\-free}!map.c@{map.\-c}}
+\subsubsection[{map\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void map\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map}
+\end{DoxyParamCaption}
+)}}\label{map_8c_a997021ee7db23ab10f1a9631f892830d}
+in order to free the map after done writng or reading 
+\begin{DoxyParams}{Parameters}
+{\em struct} & map \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 220 of file map.\-c.
+
+\hypertarget{map_8c_a20d928639ebd51bbe5c162522f986456}{\index{map.\-c@{map.\-c}!map\-\_\-read@{map\-\_\-read}}
+\index{map\-\_\-read@{map\-\_\-read}!map.c@{map.\-c}}
+\subsubsection[{map\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}void map\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{char $\ast$}]{filename, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{map_8c_a20d928639ebd51bbe5c162522f986456}
+to read the map from the file and print to the terminal 
+\begin{DoxyParams}{Parameters}
+{\em struct} & map \\
+\hline
+{\em filename} & type char \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 173 of file map.\-c.
+
+\hypertarget{map_8c_a1e556d76510b9635b3fe6b3d6ddafb97}{\index{map.\-c@{map.\-c}!map\-\_\-read\-\_\-string@{map\-\_\-read\-\_\-string}}
+\index{map\-\_\-read\-\_\-string@{map\-\_\-read\-\_\-string}!map.c@{map.\-c}}
+\subsubsection[{map\-\_\-read\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ map\-\_\-read\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fo, }
+\item[{char $\ast$}]{str, }
+\item[{int $\ast$}]{cap}
+\end{DoxyParamCaption}
+)}}\label{map_8c_a1e556d76510b9635b3fe6b3d6ddafb97}
+
+
+Definition at line 156 of file map.\-c.
+
+\hypertarget{map_8c_a1e5519b006b9d17013452a0b277d4e6e}{\index{map.\-c@{map.\-c}!map\-\_\-write@{map\-\_\-write}}
+\index{map\-\_\-write@{map\-\_\-write}!map.c@{map.\-c}}
+\subsubsection[{map\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}void map\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{map_8c_a1e5519b006b9d17013452a0b277d4e6e}
+write the current map to text file 
+\begin{DoxyParams}{Parameters}
+{\em map} & the struct map \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file map.\-c.
+

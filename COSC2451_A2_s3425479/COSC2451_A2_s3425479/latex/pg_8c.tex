@@ -1,0 +1,185 @@
+\hypertarget{pg_8c}{\section{src/pg.c File Reference}
+\label{pg_8c}\index{src/pg.\-c@{src/pg.\-c}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}map.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}square.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pg.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$curses.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpg}{pg} $\ast$ \hyperlink{pg_8c_a6737b5824e6a788b42307a81472cefc5}{create\-\_\-pg} (char $\ast$title, char direction, char state, char type)
+\item 
+int \hyperlink{pg_8c_a153bc9267887edfd075550d24ae23253}{find\-\_\-max\-\_\-pellet} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map})
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{pg_8c_a10e09a375d29728d977ac9c40a179288}{setpacman} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{structpg}{pg})
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{pg_8c_a198ac44a364090ae7371792344651754}{set\-Ghost1} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{structpg}{pg})
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{pg_8c_a54958340be500d6f6a280c1db4ec8e23}{set\-Ghost2} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{structpg}{pg})
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{pg_8c_aac6a2aa9cfd80ec91f036019ca037c1e}{set\-Ghost3} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{structpg}{pg})
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{pg_8c_a6111d3ad9cb2d46bf5b87e25cba3866b}{set\-Ghost4} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{structpg}{pg})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{pg_8c_a6737b5824e6a788b42307a81472cefc5}{\index{pg.\-c@{pg.\-c}!create\-\_\-pg@{create\-\_\-pg}}
+\index{create\-\_\-pg@{create\-\_\-pg}!pg.c@{pg.\-c}}
+\subsubsection[{create\-\_\-pg}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pg}$\ast$ create\-\_\-pg (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{title, }
+\item[{char}]{direction, }
+\item[{char}]{state, }
+\item[{char}]{type}
+\end{DoxyParamCaption}
+)}}\label{pg_8c_a6737b5824e6a788b42307a81472cefc5}
+this method will create a pacman or a ghost are used the same struct pg$\ast$ and distinguish by type 
+\begin{DoxyParams}{Parameters}
+{\em char} & $\ast$title is the title of pg \\
+\hline
+{\em char} & direction is the direction of pg \\
+\hline
+{\em char} & state is the state of pacman which is power mode or normal mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct pg$\ast$ which is pacman or ghost 
+\end{DoxyReturn}
+
+
+Definition at line 12 of file pg.\-c.
+
+\hypertarget{pg_8c_a153bc9267887edfd075550d24ae23253}{\index{pg.\-c@{pg.\-c}!find\-\_\-max\-\_\-pellet@{find\-\_\-max\-\_\-pellet}}
+\index{find\-\_\-max\-\_\-pellet@{find\-\_\-max\-\_\-pellet}!pg.c@{pg.\-c}}
+\subsubsection[{find\-\_\-max\-\_\-pellet}]{\setlength{\rightskip}{0pt plus 5cm}int find\-\_\-max\-\_\-pellet (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map}
+\end{DoxyParamCaption}
+)}}\label{pg_8c_a153bc9267887edfd075550d24ae23253}
+this function will find the max pellet that the map has. 
+\begin{DoxyParams}{Parameters}
+{\em struct} & map$\ast$ map which is the current map.  which is the total number of pellet on the map. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file pg.\-c.
+
+\hypertarget{pg_8c_a198ac44a364090ae7371792344651754}{\index{pg.\-c@{pg.\-c}!set\-Ghost1@{set\-Ghost1}}
+\index{set\-Ghost1@{set\-Ghost1}!pg.c@{pg.\-c}}
+\subsubsection[{set\-Ghost1}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ set\-Ghost1 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{struct {\bf pg} $\ast$}]{pg}
+\end{DoxyParamCaption}
+)}}\label{pg_8c_a198ac44a364090ae7371792344651754}
+this function will look on the map and find the square of ghost 
+\begin{DoxyParams}{Parameters}
+{\em struct} & map$\ast$ map which is the current map. \\
+\hline
+{\em struct} & pg $\ast$pg which is struct of ghost \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+square$\ast$ which is the square of ghost 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file pg.\-c.
+
+\hypertarget{pg_8c_a54958340be500d6f6a280c1db4ec8e23}{\index{pg.\-c@{pg.\-c}!set\-Ghost2@{set\-Ghost2}}
+\index{set\-Ghost2@{set\-Ghost2}!pg.c@{pg.\-c}}
+\subsubsection[{set\-Ghost2}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ set\-Ghost2 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{struct {\bf pg} $\ast$}]{pg}
+\end{DoxyParamCaption}
+)}}\label{pg_8c_a54958340be500d6f6a280c1db4ec8e23}
+this function will look on the map and find the square of ghost 
+\begin{DoxyParams}{Parameters}
+{\em struct} & map$\ast$ map which is the current map. \\
+\hline
+{\em struct} & pg $\ast$pg which is struct of ghost \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+square$\ast$ which is the square of ghost 
+\end{DoxyReturn}
+
+
+Definition at line 107 of file pg.\-c.
+
+\hypertarget{pg_8c_aac6a2aa9cfd80ec91f036019ca037c1e}{\index{pg.\-c@{pg.\-c}!set\-Ghost3@{set\-Ghost3}}
+\index{set\-Ghost3@{set\-Ghost3}!pg.c@{pg.\-c}}
+\subsubsection[{set\-Ghost3}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ set\-Ghost3 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{struct {\bf pg} $\ast$}]{pg}
+\end{DoxyParamCaption}
+)}}\label{pg_8c_aac6a2aa9cfd80ec91f036019ca037c1e}
+this function will look on the map and find the square of ghost 
+\begin{DoxyParams}{Parameters}
+{\em struct} & map$\ast$ map which is the current map. \\
+\hline
+{\em struct} & pg $\ast$pg which is struct of ghost \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+square$\ast$ which is the square of ghost 
+\end{DoxyReturn}
+
+
+Definition at line 145 of file pg.\-c.
+
+\hypertarget{pg_8c_a6111d3ad9cb2d46bf5b87e25cba3866b}{\index{pg.\-c@{pg.\-c}!set\-Ghost4@{set\-Ghost4}}
+\index{set\-Ghost4@{set\-Ghost4}!pg.c@{pg.\-c}}
+\subsubsection[{set\-Ghost4}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ set\-Ghost4 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{struct {\bf pg} $\ast$}]{pg}
+\end{DoxyParamCaption}
+)}}\label{pg_8c_a6111d3ad9cb2d46bf5b87e25cba3866b}
+this function will look on the map and find the square of ghost 
+\begin{DoxyParams}{Parameters}
+{\em struct} & map$\ast$ map which is the current map. \\
+\hline
+{\em struct} & pg $\ast$pg which is struct of ghost \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+square$\ast$ which is the square of ghost 
+\end{DoxyReturn}
+
+
+Definition at line 178 of file pg.\-c.
+
+\hypertarget{pg_8c_a10e09a375d29728d977ac9c40a179288}{\index{pg.\-c@{pg.\-c}!setpacman@{setpacman}}
+\index{setpacman@{setpacman}!pg.c@{pg.\-c}}
+\subsubsection[{setpacman}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ setpacman (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{struct {\bf pg} $\ast$}]{pg}
+\end{DoxyParamCaption}
+)}}\label{pg_8c_a10e09a375d29728d977ac9c40a179288}
+this function will look on the map and find the square of pacman 
+\begin{DoxyParams}{Parameters}
+{\em struct} & map$\ast$ map which is the current map. \\
+\hline
+{\em struct} & pg $\ast$pg which is struct of pacman \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+square$\ast$ which is the square of pacman 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file pg.\-c.
+

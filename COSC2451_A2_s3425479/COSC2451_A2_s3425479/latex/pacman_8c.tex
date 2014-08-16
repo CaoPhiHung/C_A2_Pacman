@@ -1,0 +1,473 @@
+\hypertarget{pacman_8c}{\section{src/pacman.c File Reference}
+\label{pacman_8c}\index{src/pacman.\-c@{src/pacman.\-c}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$curses.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}map.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}square.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pg.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}move.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sll.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pacman_8c_a43ff16ab6b9bd24602669bf844cc81f7}{N\-U\-M\-\_\-\-R\-O\-W}~20
+\item 
+\#define \hyperlink{pacman_8c_aa9627b919f0c1fa413986d83e6e31c21}{N\-U\-M\-\_\-\-C\-O\-L}~40
+\item 
+\#define \hyperlink{pacman_8c_a241aeeb764887ae5e3de58b98f04b16d}{W\-I\-D\-T\-H}~30
+\item 
+\#define \hyperlink{pacman_8c_aed89bd71aee8be823e8a20ec4e093c1e}{H\-E\-I\-G\-H\-T}~10
+\item 
+\#define \hyperlink{pacman_8c_a1a2135d400df405ccdcea1c7343ae93f}{O\-P\-T\-I\-O\-N\-\_\-\-W\-I\-D\-T\-H}~20
+\item 
+\#define \hyperlink{pacman_8c_aa641a67947c002df9a178dcb626d4371}{O\-P\-T\-I\-O\-N\-\_\-\-H\-E\-I\-G\-H\-T}~7
+\item 
+\#define \hyperlink{pacman_8c_af27cfac70191e90ee59f2fbfc0142df5}{C\-O\-L\-O\-R\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D}~0
+\item 
+\#define \hyperlink{pacman_8c_a528521b4019fe0dbc561165851660df5}{C\-O\-L\-O\-R\-\_\-\-W\-A\-L\-L}~7
+\item 
+\#define \hyperlink{pacman_8c_a977b7c2763deb11541bc962426297045}{C\-O\-L\-O\-R\-\_\-\-P\-A\-C\-M\-A\-N}~1
+\item 
+\#define \hyperlink{pacman_8c_af05f3d3ad69a8bebce02d5365ab54855}{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T1}~2
+\item 
+\#define \hyperlink{pacman_8c_a6fc21006b3ae9a84589fb5ccb8ab94b6}{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T2}~3
+\item 
+\#define \hyperlink{pacman_8c_a879a7fe70f4dd0447f8d93afe2d2a500}{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T3}~6
+\item 
+\#define \hyperlink{pacman_8c_ad75428d320aedb211aff040d42b7830f}{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T4}~5
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{pacman_8c_a2e2beb57f584043eafcd63afae7b4ba9}{printkey} (int c)
+\item 
+void \hyperlink{pacman_8c_a7b536e07ad37d456513d209f553ee381}{map\-\_\-print} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{pacman_8c_a0c26912124b850af83a75f4bb5063e69}{ghost1}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{pacman_8c_abfdc28e76f8f9c90e42fb1aaa2db53de}{ghost2}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{pacman_8c_a49b2a777fc9a37d2565a844a20fef11a}{ghost3}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{pacman_8c_a0754c374042f9baf8e673d7eca9a2ead}{ghost4}, struct \hyperlink{structpg}{pg} $\ast$pacman)
+\item 
+void \hyperlink{pacman_8c_a4121e309926629bfe9dd7d9a3fd5d0b1}{tokenize} (const char $\ast$input, char $\ast$$\ast$result, int $\ast$capacity)
+\item 
+void \hyperlink{pacman_8c_a3d663e575bfd3df906f4ec68e11c25a0}{keypress} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, int c, int row, int col)
+\item 
+void \hyperlink{pacman_8c_a2aafb28c4c5d8cff7ec3f3d018c12799}{keymove} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, int c, int row, int col)
+\item 
+char $\ast$ \hyperlink{pacman_8c_a63621f3f1ffe27c0863ee18eddb8c588}{Read\-From\-Keyboard} (char $\ast$str, int $\ast$strm)
+\item 
+void \hyperlink{pacman_8c_ae592300273a4e36dd52c87e0411eb3ab}{print\-\_\-menu} (W\-I\-N\-D\-O\-W $\ast$menu\-\_\-win, int highlight, char menu)
+\item 
+int \hyperlink{pacman_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{pacman_8c_a4efb48d82cea75cd063d2d91d2b12b31}{cheat\-Code} ()
+\item 
+void \hyperlink{pacman_8c_a5bf68e2c8de1e6f574d2fce05b823a1b}{resume\-Save\-Exit} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, bool \hyperlink{pacman_8c_af70be5f631ea1c60adcf75d6abf73734}{pause\-\_\-game})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{pacman_8c_a3d6466bf4151cedf2fc2c8fe71e83757}{author} \mbox{[}1000\mbox{]}
+\item 
+char \hyperlink{pacman_8c_a726731e69a2a168b78d31cec675b1fa2}{level} \mbox{[}500\mbox{]}
+\item 
+char \hyperlink{pacman_8c_aa236ecf61182366a799d14f4a8b54963}{player} \mbox{[}500\mbox{]}
+\item 
+bool \hyperlink{pacman_8c_af70be5f631ea1c60adcf75d6abf73734}{pause\-\_\-game} = F\-A\-L\-S\-E
+\item 
+struct \hyperlink{structpg}{pg} $\ast$ \hyperlink{pacman_8c_a0c26912124b850af83a75f4bb5063e69}{ghost1}
+\item 
+struct \hyperlink{structpg}{pg} $\ast$ \hyperlink{pacman_8c_abfdc28e76f8f9c90e42fb1aaa2db53de}{ghost2}
+\item 
+struct \hyperlink{structpg}{pg} $\ast$ \hyperlink{pacman_8c_a49b2a777fc9a37d2565a844a20fef11a}{ghost3}
+\item 
+struct \hyperlink{structpg}{pg} $\ast$ \hyperlink{pacman_8c_a0754c374042f9baf8e673d7eca9a2ead}{ghost4}
+\item 
+int \hyperlink{pacman_8c_a8f0744c55ee97ebf34757f8499a66139}{startx} = 0
+\item 
+int \hyperlink{pacman_8c_a19e264821cbd530471c1cf985d7cd239}{starty} = 0
+\item 
+char $\ast$ \hyperlink{pacman_8c_a186d0241c62502fb176689d6e6d56a46}{choices} \mbox{[}$\,$\mbox{]}
+\item 
+char $\ast$ \hyperlink{pacman_8c_a004b893a4391189108c29182f992a68a}{levels} \mbox{[}$\,$\mbox{]}
+\item 
+char $\ast$ \hyperlink{pacman_8c_a59dadb512dfa867af99248bf04debc7d}{options} \mbox{[}$\,$\mbox{]}
+\item 
+int \hyperlink{pacman_8c_a478e7a7801776ac24cd223b7e08bee25}{n\-\_\-choices} = sizeof (\hyperlink{pacman_8c_a186d0241c62502fb176689d6e6d56a46}{choices}) / sizeof (char $\ast$)
+\item 
+int \hyperlink{pacman_8c_ab220bc5c66e16dbb8cff3429e920bad1}{n\-\_\-levels} = sizeof (\hyperlink{pacman_8c_a004b893a4391189108c29182f992a68a}{levels}) / sizeof (char $\ast$)
+\item 
+int \hyperlink{pacman_8c_adb6c01b71d15f5c3eeeecec46c5d294d}{n\-\_\-options} = sizeof (\hyperlink{pacman_8c_a59dadb512dfa867af99248bf04debc7d}{options}) / sizeof (char $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{pacman_8c_af27cfac70191e90ee59f2fbfc0142df5}{\index{pacman.\-c@{pacman.\-c}!C\-O\-L\-O\-R\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D@{C\-O\-L\-O\-R\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D}}
+\index{C\-O\-L\-O\-R\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D@{C\-O\-L\-O\-R\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D}!pacman.c@{pacman.\-c}}
+\subsubsection[{C\-O\-L\-O\-R\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-L\-O\-R\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D~0}}\label{pacman_8c_af27cfac70191e90ee59f2fbfc0142df5}
+
+
+Definition at line 24 of file pacman.\-c.
+
+\hypertarget{pacman_8c_af05f3d3ad69a8bebce02d5365ab54855}{\index{pacman.\-c@{pacman.\-c}!C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T1@{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T1}}
+\index{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T1@{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T1}!pacman.c@{pacman.\-c}}
+\subsubsection[{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T1}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T1~2}}\label{pacman_8c_af05f3d3ad69a8bebce02d5365ab54855}
+
+
+Definition at line 27 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a6fc21006b3ae9a84589fb5ccb8ab94b6}{\index{pacman.\-c@{pacman.\-c}!C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T2@{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T2}}
+\index{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T2@{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T2}!pacman.c@{pacman.\-c}}
+\subsubsection[{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T2}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T2~3}}\label{pacman_8c_a6fc21006b3ae9a84589fb5ccb8ab94b6}
+
+
+Definition at line 28 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a879a7fe70f4dd0447f8d93afe2d2a500}{\index{pacman.\-c@{pacman.\-c}!C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T3@{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T3}}
+\index{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T3@{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T3}!pacman.c@{pacman.\-c}}
+\subsubsection[{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T3}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T3~6}}\label{pacman_8c_a879a7fe70f4dd0447f8d93afe2d2a500}
+
+
+Definition at line 29 of file pacman.\-c.
+
+\hypertarget{pacman_8c_ad75428d320aedb211aff040d42b7830f}{\index{pacman.\-c@{pacman.\-c}!C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T4@{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T4}}
+\index{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T4@{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T4}!pacman.c@{pacman.\-c}}
+\subsubsection[{C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T4}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-L\-O\-R\-\_\-\-G\-H\-O\-S\-T4~5}}\label{pacman_8c_ad75428d320aedb211aff040d42b7830f}
+
+
+Definition at line 30 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a977b7c2763deb11541bc962426297045}{\index{pacman.\-c@{pacman.\-c}!C\-O\-L\-O\-R\-\_\-\-P\-A\-C\-M\-A\-N@{C\-O\-L\-O\-R\-\_\-\-P\-A\-C\-M\-A\-N}}
+\index{C\-O\-L\-O\-R\-\_\-\-P\-A\-C\-M\-A\-N@{C\-O\-L\-O\-R\-\_\-\-P\-A\-C\-M\-A\-N}!pacman.c@{pacman.\-c}}
+\subsubsection[{C\-O\-L\-O\-R\-\_\-\-P\-A\-C\-M\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-L\-O\-R\-\_\-\-P\-A\-C\-M\-A\-N~1}}\label{pacman_8c_a977b7c2763deb11541bc962426297045}
+
+
+Definition at line 26 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a528521b4019fe0dbc561165851660df5}{\index{pacman.\-c@{pacman.\-c}!C\-O\-L\-O\-R\-\_\-\-W\-A\-L\-L@{C\-O\-L\-O\-R\-\_\-\-W\-A\-L\-L}}
+\index{C\-O\-L\-O\-R\-\_\-\-W\-A\-L\-L@{C\-O\-L\-O\-R\-\_\-\-W\-A\-L\-L}!pacman.c@{pacman.\-c}}
+\subsubsection[{C\-O\-L\-O\-R\-\_\-\-W\-A\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-L\-O\-R\-\_\-\-W\-A\-L\-L~7}}\label{pacman_8c_a528521b4019fe0dbc561165851660df5}
+
+
+Definition at line 25 of file pacman.\-c.
+
+\hypertarget{pacman_8c_aed89bd71aee8be823e8a20ec4e093c1e}{\index{pacman.\-c@{pacman.\-c}!H\-E\-I\-G\-H\-T@{H\-E\-I\-G\-H\-T}}
+\index{H\-E\-I\-G\-H\-T@{H\-E\-I\-G\-H\-T}!pacman.c@{pacman.\-c}}
+\subsubsection[{H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-E\-I\-G\-H\-T~10}}\label{pacman_8c_aed89bd71aee8be823e8a20ec4e093c1e}
+
+
+Definition at line 14 of file pacman.\-c.
+
+\hypertarget{pacman_8c_aa9627b919f0c1fa413986d83e6e31c21}{\index{pacman.\-c@{pacman.\-c}!N\-U\-M\-\_\-\-C\-O\-L@{N\-U\-M\-\_\-\-C\-O\-L}}
+\index{N\-U\-M\-\_\-\-C\-O\-L@{N\-U\-M\-\_\-\-C\-O\-L}!pacman.c@{pacman.\-c}}
+\subsubsection[{N\-U\-M\-\_\-\-C\-O\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-\_\-\-C\-O\-L~40}}\label{pacman_8c_aa9627b919f0c1fa413986d83e6e31c21}
+
+
+Definition at line 12 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a43ff16ab6b9bd24602669bf844cc81f7}{\index{pacman.\-c@{pacman.\-c}!N\-U\-M\-\_\-\-R\-O\-W@{N\-U\-M\-\_\-\-R\-O\-W}}
+\index{N\-U\-M\-\_\-\-R\-O\-W@{N\-U\-M\-\_\-\-R\-O\-W}!pacman.c@{pacman.\-c}}
+\subsubsection[{N\-U\-M\-\_\-\-R\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-\_\-\-R\-O\-W~20}}\label{pacman_8c_a43ff16ab6b9bd24602669bf844cc81f7}
+
+
+Definition at line 11 of file pacman.\-c.
+
+\hypertarget{pacman_8c_aa641a67947c002df9a178dcb626d4371}{\index{pacman.\-c@{pacman.\-c}!O\-P\-T\-I\-O\-N\-\_\-\-H\-E\-I\-G\-H\-T@{O\-P\-T\-I\-O\-N\-\_\-\-H\-E\-I\-G\-H\-T}}
+\index{O\-P\-T\-I\-O\-N\-\_\-\-H\-E\-I\-G\-H\-T@{O\-P\-T\-I\-O\-N\-\_\-\-H\-E\-I\-G\-H\-T}!pacman.c@{pacman.\-c}}
+\subsubsection[{O\-P\-T\-I\-O\-N\-\_\-\-H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-P\-T\-I\-O\-N\-\_\-\-H\-E\-I\-G\-H\-T~7}}\label{pacman_8c_aa641a67947c002df9a178dcb626d4371}
+
+
+Definition at line 16 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a1a2135d400df405ccdcea1c7343ae93f}{\index{pacman.\-c@{pacman.\-c}!O\-P\-T\-I\-O\-N\-\_\-\-W\-I\-D\-T\-H@{O\-P\-T\-I\-O\-N\-\_\-\-W\-I\-D\-T\-H}}
+\index{O\-P\-T\-I\-O\-N\-\_\-\-W\-I\-D\-T\-H@{O\-P\-T\-I\-O\-N\-\_\-\-W\-I\-D\-T\-H}!pacman.c@{pacman.\-c}}
+\subsubsection[{O\-P\-T\-I\-O\-N\-\_\-\-W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-P\-T\-I\-O\-N\-\_\-\-W\-I\-D\-T\-H~20}}\label{pacman_8c_a1a2135d400df405ccdcea1c7343ae93f}
+
+
+Definition at line 15 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a241aeeb764887ae5e3de58b98f04b16d}{\index{pacman.\-c@{pacman.\-c}!W\-I\-D\-T\-H@{W\-I\-D\-T\-H}}
+\index{W\-I\-D\-T\-H@{W\-I\-D\-T\-H}!pacman.c@{pacman.\-c}}
+\subsubsection[{W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-I\-D\-T\-H~30}}\label{pacman_8c_a241aeeb764887ae5e3de58b98f04b16d}
+
+
+Definition at line 13 of file pacman.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{pacman_8c_a4efb48d82cea75cd063d2d91d2b12b31}{\index{pacman.\-c@{pacman.\-c}!cheat\-Code@{cheat\-Code}}
+\index{cheat\-Code@{cheat\-Code}!pacman.c@{pacman.\-c}}
+\subsubsection[{cheat\-Code}]{\setlength{\rightskip}{0pt plus 5cm}void cheat\-Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{pacman_8c_a4efb48d82cea75cd063d2d91d2b12b31}
+
+
+Definition at line 451 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a2aafb28c4c5d8cff7ec3f3d018c12799}{\index{pacman.\-c@{pacman.\-c}!keymove@{keymove}}
+\index{keymove@{keymove}!pacman.c@{pacman.\-c}}
+\subsubsection[{keymove}]{\setlength{\rightskip}{0pt plus 5cm}void keymove (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{int}]{c, }
+\item[{int}]{row, }
+\item[{int}]{col}
+\end{DoxyParamCaption}
+)}}\label{pacman_8c_a2aafb28c4c5d8cff7ec3f3d018c12799}
+
+
+Definition at line 222 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a3d663e575bfd3df906f4ec68e11c25a0}{\index{pacman.\-c@{pacman.\-c}!keypress@{keypress}}
+\index{keypress@{keypress}!pacman.c@{pacman.\-c}}
+\subsubsection[{keypress}]{\setlength{\rightskip}{0pt plus 5cm}void keypress (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{int}]{c, }
+\item[{int}]{row, }
+\item[{int}]{col}
+\end{DoxyParamCaption}
+)}}\label{pacman_8c_a3d663e575bfd3df906f4ec68e11c25a0}
+
+
+Definition at line 208 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{pacman.\-c@{pacman.\-c}!main@{main}}
+\index{main@{main}!pacman.c@{pacman.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{pacman_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 314 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a7b536e07ad37d456513d209f553ee381}{\index{pacman.\-c@{pacman.\-c}!map\-\_\-print@{map\-\_\-print}}
+\index{map\-\_\-print@{map\-\_\-print}!pacman.c@{pacman.\-c}}
+\subsubsection[{map\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void map\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{struct {\bf pg} $\ast$}]{ghost1, }
+\item[{struct {\bf pg} $\ast$}]{ghost2, }
+\item[{struct {\bf pg} $\ast$}]{ghost3, }
+\item[{struct {\bf pg} $\ast$}]{ghost4, }
+\item[{struct {\bf pg} $\ast$}]{pacman}
+\end{DoxyParamCaption}
+)}}\label{pacman_8c_a7b536e07ad37d456513d209f553ee381}
+
+
+Definition at line 135 of file pacman.\-c.
+
+\hypertarget{pacman_8c_ae592300273a4e36dd52c87e0411eb3ab}{\index{pacman.\-c@{pacman.\-c}!print\-\_\-menu@{print\-\_\-menu}}
+\index{print\-\_\-menu@{print\-\_\-menu}!pacman.c@{pacman.\-c}}
+\subsubsection[{print\-\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-menu (
+\begin{DoxyParamCaption}
+\item[{W\-I\-N\-D\-O\-W $\ast$}]{menu\-\_\-win, }
+\item[{int}]{highlight, }
+\item[{char}]{menu}
+\end{DoxyParamCaption}
+)}}\label{pacman_8c_ae592300273a4e36dd52c87e0411eb3ab}
+
+
+Definition at line 274 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a2e2beb57f584043eafcd63afae7b4ba9}{\index{pacman.\-c@{pacman.\-c}!printkey@{printkey}}
+\index{printkey@{printkey}!pacman.c@{pacman.\-c}}
+\subsubsection[{printkey}]{\setlength{\rightskip}{0pt plus 5cm}void printkey (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{pacman_8c_a2e2beb57f584043eafcd63afae7b4ba9}
+
+
+Definition at line 79 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a63621f3f1ffe27c0863ee18eddb8c588}{\index{pacman.\-c@{pacman.\-c}!Read\-From\-Keyboard@{Read\-From\-Keyboard}}
+\index{Read\-From\-Keyboard@{Read\-From\-Keyboard}!pacman.c@{pacman.\-c}}
+\subsubsection[{Read\-From\-Keyboard}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Read\-From\-Keyboard (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{int $\ast$}]{strm}
+\end{DoxyParamCaption}
+)}}\label{pacman_8c_a63621f3f1ffe27c0863ee18eddb8c588}
+
+
+Definition at line 250 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a5bf68e2c8de1e6f574d2fce05b823a1b}{\index{pacman.\-c@{pacman.\-c}!resume\-Save\-Exit@{resume\-Save\-Exit}}
+\index{resume\-Save\-Exit@{resume\-Save\-Exit}!pacman.c@{pacman.\-c}}
+\subsubsection[{resume\-Save\-Exit}]{\setlength{\rightskip}{0pt plus 5cm}void resume\-Save\-Exit (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{bool}]{pause\-\_\-game}
+\end{DoxyParamCaption}
+)}}\label{pacman_8c_a5bf68e2c8de1e6f574d2fce05b823a1b}
+
+
+Definition at line 478 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a4121e309926629bfe9dd7d9a3fd5d0b1}{\index{pacman.\-c@{pacman.\-c}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!pacman.c@{pacman.\-c}}
+\subsubsection[{tokenize}]{\setlength{\rightskip}{0pt plus 5cm}void tokenize (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{input, }
+\item[{char $\ast$$\ast$}]{result, }
+\item[{int $\ast$}]{capacity}
+\end{DoxyParamCaption}
+)}}\label{pacman_8c_a4121e309926629bfe9dd7d9a3fd5d0b1}
+
+
+Definition at line 187 of file pacman.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{pacman_8c_a3d6466bf4151cedf2fc2c8fe71e83757}{\index{pacman.\-c@{pacman.\-c}!author@{author}}
+\index{author@{author}!pacman.c@{pacman.\-c}}
+\subsubsection[{author}]{\setlength{\rightskip}{0pt plus 5cm}char author\mbox{[}1000\mbox{]}}}\label{pacman_8c_a3d6466bf4151cedf2fc2c8fe71e83757}
+
+
+Definition at line 38 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a186d0241c62502fb176689d6e6d56a46}{\index{pacman.\-c@{pacman.\-c}!choices@{choices}}
+\index{choices@{choices}!pacman.c@{pacman.\-c}}
+\subsubsection[{choices}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ choices\mbox{[}$\,$\mbox{]}}}\label{pacman_8c_a186d0241c62502fb176689d6e6d56a46}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    \textcolor{stringliteral}{"Start game"},
+    \textcolor{stringliteral}{"High score"},
+    \textcolor{stringliteral}{"Level editor"},
+    \textcolor{stringliteral}{"Credit"},
+    \textcolor{stringliteral}{"Exit"},
+\}
+\end{DoxyCode}
+
+
+Definition at line 52 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a0c26912124b850af83a75f4bb5063e69}{\index{pacman.\-c@{pacman.\-c}!ghost1@{ghost1}}
+\index{ghost1@{ghost1}!pacman.c@{pacman.\-c}}
+\subsubsection[{ghost1}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pg}$\ast$ ghost1}}\label{pacman_8c_a0c26912124b850af83a75f4bb5063e69}
+
+
+Definition at line 45 of file pacman.\-c.
+
+\hypertarget{pacman_8c_abfdc28e76f8f9c90e42fb1aaa2db53de}{\index{pacman.\-c@{pacman.\-c}!ghost2@{ghost2}}
+\index{ghost2@{ghost2}!pacman.c@{pacman.\-c}}
+\subsubsection[{ghost2}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pg}$\ast$ ghost2}}\label{pacman_8c_abfdc28e76f8f9c90e42fb1aaa2db53de}
+
+
+Definition at line 46 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a49b2a777fc9a37d2565a844a20fef11a}{\index{pacman.\-c@{pacman.\-c}!ghost3@{ghost3}}
+\index{ghost3@{ghost3}!pacman.c@{pacman.\-c}}
+\subsubsection[{ghost3}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pg}$\ast$ ghost3}}\label{pacman_8c_a49b2a777fc9a37d2565a844a20fef11a}
+
+
+Definition at line 47 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a0754c374042f9baf8e673d7eca9a2ead}{\index{pacman.\-c@{pacman.\-c}!ghost4@{ghost4}}
+\index{ghost4@{ghost4}!pacman.c@{pacman.\-c}}
+\subsubsection[{ghost4}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pg}$\ast$ ghost4}}\label{pacman_8c_a0754c374042f9baf8e673d7eca9a2ead}
+
+
+Definition at line 48 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a726731e69a2a168b78d31cec675b1fa2}{\index{pacman.\-c@{pacman.\-c}!level@{level}}
+\index{level@{level}!pacman.c@{pacman.\-c}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}char level\mbox{[}500\mbox{]}}}\label{pacman_8c_a726731e69a2a168b78d31cec675b1fa2}
+
+
+Definition at line 39 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a004b893a4391189108c29182f992a68a}{\index{pacman.\-c@{pacman.\-c}!levels@{levels}}
+\index{levels@{levels}!pacman.c@{pacman.\-c}}
+\subsubsection[{levels}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ levels\mbox{[}$\,$\mbox{]}}}\label{pacman_8c_a004b893a4391189108c29182f992a68a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    \textcolor{stringliteral}{"Level 1 (Easy)- Luan"},
+    \textcolor{stringliteral}{"Level 2 (Medium)- Hung"},
+    \textcolor{stringliteral}{"Level 3 (Medium)- Nguyen"},
+    \textcolor{stringliteral}{"Level 4 (Hard)- Nhan"},
+    \textcolor{stringliteral}{"Load Game"},
+    \textcolor{stringliteral}{"Back to Menu"},
+\}
+\end{DoxyCode}
+
+
+Definition at line 60 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a478e7a7801776ac24cd223b7e08bee25}{\index{pacman.\-c@{pacman.\-c}!n\-\_\-choices@{n\-\_\-choices}}
+\index{n\-\_\-choices@{n\-\_\-choices}!pacman.c@{pacman.\-c}}
+\subsubsection[{n\-\_\-choices}]{\setlength{\rightskip}{0pt plus 5cm}int n\-\_\-choices = sizeof ({\bf choices}) / sizeof (char $\ast$)}}\label{pacman_8c_a478e7a7801776ac24cd223b7e08bee25}
+
+
+Definition at line 75 of file pacman.\-c.
+
+\hypertarget{pacman_8c_ab220bc5c66e16dbb8cff3429e920bad1}{\index{pacman.\-c@{pacman.\-c}!n\-\_\-levels@{n\-\_\-levels}}
+\index{n\-\_\-levels@{n\-\_\-levels}!pacman.c@{pacman.\-c}}
+\subsubsection[{n\-\_\-levels}]{\setlength{\rightskip}{0pt plus 5cm}int n\-\_\-levels = sizeof ({\bf levels}) / sizeof (char $\ast$)}}\label{pacman_8c_ab220bc5c66e16dbb8cff3429e920bad1}
+
+
+Definition at line 76 of file pacman.\-c.
+
+\hypertarget{pacman_8c_adb6c01b71d15f5c3eeeecec46c5d294d}{\index{pacman.\-c@{pacman.\-c}!n\-\_\-options@{n\-\_\-options}}
+\index{n\-\_\-options@{n\-\_\-options}!pacman.c@{pacman.\-c}}
+\subsubsection[{n\-\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}int n\-\_\-options = sizeof ({\bf options}) / sizeof (char $\ast$)}}\label{pacman_8c_adb6c01b71d15f5c3eeeecec46c5d294d}
+
+
+Definition at line 77 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a59dadb512dfa867af99248bf04debc7d}{\index{pacman.\-c@{pacman.\-c}!options@{options}}
+\index{options@{options}!pacman.c@{pacman.\-c}}
+\subsubsection[{options}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ options\mbox{[}$\,$\mbox{]}}}\label{pacman_8c_a59dadb512dfa867af99248bf04debc7d}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    \textcolor{stringliteral}{"Resume"},
+    \textcolor{stringliteral}{"Save game"},
+    \textcolor{stringliteral}{"Exit"}
+\}
+\end{DoxyCode}
+
+
+Definition at line 69 of file pacman.\-c.
+
+\hypertarget{pacman_8c_af70be5f631ea1c60adcf75d6abf73734}{\index{pacman.\-c@{pacman.\-c}!pause\-\_\-game@{pause\-\_\-game}}
+\index{pause\-\_\-game@{pause\-\_\-game}!pacman.c@{pacman.\-c}}
+\subsubsection[{pause\-\_\-game}]{\setlength{\rightskip}{0pt plus 5cm}bool pause\-\_\-game = F\-A\-L\-S\-E}}\label{pacman_8c_af70be5f631ea1c60adcf75d6abf73734}
+
+
+Definition at line 41 of file pacman.\-c.
+
+\hypertarget{pacman_8c_aa236ecf61182366a799d14f4a8b54963}{\index{pacman.\-c@{pacman.\-c}!player@{player}}
+\index{player@{player}!pacman.c@{pacman.\-c}}
+\subsubsection[{player}]{\setlength{\rightskip}{0pt plus 5cm}char player\mbox{[}500\mbox{]}}}\label{pacman_8c_aa236ecf61182366a799d14f4a8b54963}
+
+
+Definition at line 40 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a8f0744c55ee97ebf34757f8499a66139}{\index{pacman.\-c@{pacman.\-c}!startx@{startx}}
+\index{startx@{startx}!pacman.c@{pacman.\-c}}
+\subsubsection[{startx}]{\setlength{\rightskip}{0pt plus 5cm}int startx = 0}}\label{pacman_8c_a8f0744c55ee97ebf34757f8499a66139}
+
+
+Definition at line 49 of file pacman.\-c.
+
+\hypertarget{pacman_8c_a19e264821cbd530471c1cf985d7cd239}{\index{pacman.\-c@{pacman.\-c}!starty@{starty}}
+\index{starty@{starty}!pacman.c@{pacman.\-c}}
+\subsubsection[{starty}]{\setlength{\rightskip}{0pt plus 5cm}int starty = 0}}\label{pacman_8c_a19e264821cbd530471c1cf985d7cd239}
+
+
+Definition at line 50 of file pacman.\-c.
+

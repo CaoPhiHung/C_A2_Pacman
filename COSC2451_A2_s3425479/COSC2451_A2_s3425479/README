@@ -1,0 +1,25 @@
+s3372775@rmit.edu.vn_Luan Trinh
+s3372748@rmit.edu.vn_Hung Cao Phi
+s3425479@rmit.edu.vn_Nguyen Trung Nhan
+s3408669@rmit.edu.vn_Nguyen Hanh Nguyen
+
+ghost1- Nguyen Hanh Nguyen - s3408669 - blue ghost, plus/minus sign
+ghost2- Trinh Luan - s3372775 - yellow ghost, smaller sign
+ghost3- Hung Cao Phi - s3372748 - green ghost, greater sign
+ghost4- Nguyen Trung Nhan - s3425479 - red ghost , check board sign
+
+1) In the level editor ,in order to escape the command mode, user should input letter 'e' and press enter to escape.
+2) When user chooses start game, user will be able to choose the level of difficulty he/she wants to play. (easy, medium, medium and difficult) or user can load the old saved game.
+3) When in the game, the game will wait for user input to start the game running.
+4) When ghost eats pacman, pacman's lives will be deducted, the game will pause and wait for the user's input to resume the game. 
+5) When the game resumes, pacman and ghosts will go back to their original places at the start of the game. 
+6) If pacman run out of lives, the game will ask for user name and the score will be saved in the highscore.pac file.
+7) After asking the highscore, user will go back to menu and continue to choose the level he/she wants to play or goes to other options.
+8) When pacman eats power pellet, the color of the map will change into red. Power state lasts for 10 seconds, user can keep track of the time remaining on the right side of the map.
+9) After the power mode ends, the color of the map will go back to blue.
+10) Other features include: cheat code, pause game, save game, exit game.
+11) Cheat mode. In order to use cheat code, user press ":" in the normal mode then input "nhln1" and press enter. 
+In cheat mode, the ghost will stay still when pacman eats power pellet the ghost will also stay still but after the game resumes the ghosts will go back to the normal state. 
+User can also use cheat mode again and again to make the game esier.
+12) Reference for the menu http://www.tldp.org/HOWTO/NCURSES-Programming-HOWTO/keys.html
+

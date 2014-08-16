@@ -1,0 +1,226 @@
+\hypertarget{sll_8c}{\section{src/sll.c File Reference}
+\label{sll_8c}\index{src/sll.\-c@{src/sll.\-c}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}map.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}square.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pg.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sll.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}move.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$curses.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsll}{sll} $\ast$ \hyperlink{sll_8c_af61ead08082482150bfd1c88daaa1c65}{sll\-\_\-create\-\_\-null} ()
+\item 
+struct \hyperlink{structsll}{sll} $\ast$ \hyperlink{sll_8c_ae3af60c759bff8b751e403ad848dba2c}{sll\-\_\-create} (struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-node)
+\item 
+void \hyperlink{sll_8c_a07b6dd8d6c252d928a987c0f4a62b5ba}{sll\-\_\-add\-\_\-square} (struct \hyperlink{structsll}{sll} $\ast$sll\-\_\-node, struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-node)
+\item 
+int \hyperlink{sll_8c_a69b2d4020d5b7d21a6059a9737980ef0}{sll\-\_\-is\-\_\-not\-\_\-exist} (struct \hyperlink{structsll}{sll} $\ast$sll\-\_\-node, struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-node)
+\item 
+void \hyperlink{sll_8c_ad1f0b0ff7a5da29fd5f28c9af64e593f}{sll\-\_\-add\-\_\-sll} (struct \hyperlink{structsll}{sll} $\ast$sll\-\_\-old, struct \hyperlink{structsll}{sll} $\ast$sll\-\_\-new)
+\item 
+int \hyperlink{sll_8c_a6ce075e1c6dea0b08fd4a83103b499b4}{sll\-\_\-count} (struct \hyperlink{structsll}{sll} $\ast$sll\-\_\-node)
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{sll_8c_a7e97bc14ad7e12c91ce26c1bcd167e9b}{sll\-\_\-next\-\_\-square} (struct \hyperlink{structsll}{sll} $\ast$sll\-\_\-node)
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{sll_8c_a88e27158d6c27d5a069d2cdff64696af}{sll\-\_\-take\-\_\-last} (struct \hyperlink{structsll}{sll} $\ast$sll\-\_\-node)
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{sll_8c_acc1cad54477f4fed696d33dc7e0a8725}{sll\-\_\-get\-\_\-last} (struct \hyperlink{structsll}{sll} $\ast$sll\-\_\-node)
+\item 
+void \hyperlink{sll_8c_abc7334d3dc6bafa6ca63303b376a94ae}{sll\-\_\-free} (struct \hyperlink{structsll}{sll} $\ast$sll\-\_\-node)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sll_8c_ad1f0b0ff7a5da29fd5f28c9af64e593f}{\index{sll.\-c@{sll.\-c}!sll\-\_\-add\-\_\-sll@{sll\-\_\-add\-\_\-sll}}
+\index{sll\-\_\-add\-\_\-sll@{sll\-\_\-add\-\_\-sll}!sll.c@{sll.\-c}}
+\subsubsection[{sll\-\_\-add\-\_\-sll}]{\setlength{\rightskip}{0pt plus 5cm}void sll\-\_\-add\-\_\-sll (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sll} $\ast$}]{sll\-\_\-old, }
+\item[{struct {\bf sll} $\ast$}]{sll\-\_\-new}
+\end{DoxyParamCaption}
+)}}\label{sll_8c_ad1f0b0ff7a5da29fd5f28c9af64e593f}
+this function will add a singly linked list to an existed one. 
+\begin{DoxyParams}{Parameters}
+{\em struct} & sll $\ast$sll\-\_\-old is the singly link list of the exist one \\
+\hline
+{\em struct} & sll $\ast$sll\-\_\-new is the singly link list that will be take value to the others. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file sll.\-c.
+
+\hypertarget{sll_8c_a07b6dd8d6c252d928a987c0f4a62b5ba}{\index{sll.\-c@{sll.\-c}!sll\-\_\-add\-\_\-square@{sll\-\_\-add\-\_\-square}}
+\index{sll\-\_\-add\-\_\-square@{sll\-\_\-add\-\_\-square}!sll.c@{sll.\-c}}
+\subsubsection[{sll\-\_\-add\-\_\-square}]{\setlength{\rightskip}{0pt plus 5cm}void sll\-\_\-add\-\_\-square (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sll} $\ast$}]{sll\-\_\-node, }
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{sll_8c_a07b6dd8d6c252d928a987c0f4a62b5ba}
+this function will add a square to a singly link list. 
+\begin{DoxyParams}{Parameters}
+{\em struct} & sll $\ast$sll\-\_\-node is the singly link list that will be added \\
+\hline
+{\em struct} & square$\ast$ sq\-\_\-node is the value that will be add to singly link list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file sll.\-c.
+
+\hypertarget{sll_8c_a6ce075e1c6dea0b08fd4a83103b499b4}{\index{sll.\-c@{sll.\-c}!sll\-\_\-count@{sll\-\_\-count}}
+\index{sll\-\_\-count@{sll\-\_\-count}!sll.c@{sll.\-c}}
+\subsubsection[{sll\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}int sll\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sll} $\ast$}]{sll\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{sll_8c_a6ce075e1c6dea0b08fd4a83103b499b4}
+this function will count the total number of elements in the list. 
+\begin{DoxyParams}{Parameters}
+{\em struct} & sll $\ast$sll\-\_\-node is the singly link list of the exist one \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 is consider is true 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file sll.\-c.
+
+\hypertarget{sll_8c_ae3af60c759bff8b751e403ad848dba2c}{\index{sll.\-c@{sll.\-c}!sll\-\_\-create@{sll\-\_\-create}}
+\index{sll\-\_\-create@{sll\-\_\-create}!sll.c@{sll.\-c}}
+\subsubsection[{sll\-\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf sll}$\ast$ sll\-\_\-create (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{sll_8c_ae3af60c759bff8b751e403ad848dba2c}
+this function will create a singly link list with the first value in the parameter 
+\begin{DoxyParams}{Parameters}
+{\em struct} & square$\ast$ sq\-\_\-node is the first value of singly link list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sll$\ast$ which is the singlt link list 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file sll.\-c.
+
+\hypertarget{sll_8c_af61ead08082482150bfd1c88daaa1c65}{\index{sll.\-c@{sll.\-c}!sll\-\_\-create\-\_\-null@{sll\-\_\-create\-\_\-null}}
+\index{sll\-\_\-create\-\_\-null@{sll\-\_\-create\-\_\-null}!sll.c@{sll.\-c}}
+\subsubsection[{sll\-\_\-create\-\_\-null}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf sll}$\ast$ sll\-\_\-create\-\_\-null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sll_8c_af61ead08082482150bfd1c88daaa1c65}
+this function will create a singly link list with null value \begin{DoxyReturn}{Returns}
+sll$\ast$ which is the singlt link list 
+\end{DoxyReturn}
+
+
+Definition at line 14 of file sll.\-c.
+
+\hypertarget{sll_8c_abc7334d3dc6bafa6ca63303b376a94ae}{\index{sll.\-c@{sll.\-c}!sll\-\_\-free@{sll\-\_\-free}}
+\index{sll\-\_\-free@{sll\-\_\-free}!sll.c@{sll.\-c}}
+\subsubsection[{sll\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void sll\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sll} $\ast$}]{sll\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{sll_8c_abc7334d3dc6bafa6ca63303b376a94ae}
+this function will free a singly linked list. 
+\begin{DoxyParams}{Parameters}
+{\em struct} & sll $\ast$sll\-\_\-node is the singly link list that will be used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file sll.\-c.
+
+\hypertarget{sll_8c_acc1cad54477f4fed696d33dc7e0a8725}{\index{sll.\-c@{sll.\-c}!sll\-\_\-get\-\_\-last@{sll\-\_\-get\-\_\-last}}
+\index{sll\-\_\-get\-\_\-last@{sll\-\_\-get\-\_\-last}!sll.c@{sll.\-c}}
+\subsubsection[{sll\-\_\-get\-\_\-last}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ sll\-\_\-get\-\_\-last (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sll} $\ast$}]{sll\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{sll_8c_acc1cad54477f4fed696d33dc7e0a8725}
+this function take the last value in the list and return that square. then it will not free and remove that element. 
+\begin{DoxyParams}{Parameters}
+{\em struct} & sll $\ast$sll\-\_\-node is the list that will be used. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct square$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file sll.\-c.
+
+\hypertarget{sll_8c_a69b2d4020d5b7d21a6059a9737980ef0}{\index{sll.\-c@{sll.\-c}!sll\-\_\-is\-\_\-not\-\_\-exist@{sll\-\_\-is\-\_\-not\-\_\-exist}}
+\index{sll\-\_\-is\-\_\-not\-\_\-exist@{sll\-\_\-is\-\_\-not\-\_\-exist}!sll.c@{sll.\-c}}
+\subsubsection[{sll\-\_\-is\-\_\-not\-\_\-exist}]{\setlength{\rightskip}{0pt plus 5cm}int sll\-\_\-is\-\_\-not\-\_\-exist (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sll} $\ast$}]{sll\-\_\-node, }
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{sll_8c_a69b2d4020d5b7d21a6059a9737980ef0}
+this function will check that a square value is already exist in the singly linked list or not 
+\begin{DoxyParams}{Parameters}
+{\em struct} & square$\ast$ sq\-\_\-node is the first value of singly link list \\
+\hline
+{\em struct} & square$\ast$ sq\-\_\-node is the value that will be add to singly link list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 is consider is true 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file sll.\-c.
+
+\hypertarget{sll_8c_a7e97bc14ad7e12c91ce26c1bcd167e9b}{\index{sll.\-c@{sll.\-c}!sll\-\_\-next\-\_\-square@{sll\-\_\-next\-\_\-square}}
+\index{sll\-\_\-next\-\_\-square@{sll\-\_\-next\-\_\-square}!sll.c@{sll.\-c}}
+\subsubsection[{sll\-\_\-next\-\_\-square}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ sll\-\_\-next\-\_\-square (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sll} $\ast$}]{sll\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{sll_8c_a7e97bc14ad7e12c91ce26c1bcd167e9b}
+this function take the next value in the list and return that square. then it will free and remove that element. 
+\begin{DoxyParams}{Parameters}
+{\em struct} & sll $\ast$sll\-\_\-node is the list that will be used. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct square$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file sll.\-c.
+
+\hypertarget{sll_8c_a88e27158d6c27d5a069d2cdff64696af}{\index{sll.\-c@{sll.\-c}!sll\-\_\-take\-\_\-last@{sll\-\_\-take\-\_\-last}}
+\index{sll\-\_\-take\-\_\-last@{sll\-\_\-take\-\_\-last}!sll.c@{sll.\-c}}
+\subsubsection[{sll\-\_\-take\-\_\-last}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ sll\-\_\-take\-\_\-last (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sll} $\ast$}]{sll\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{sll_8c_a88e27158d6c27d5a069d2cdff64696af}
+this function take the last value in the list and return that square. then it will free and remove that element. 
+\begin{DoxyParams}{Parameters}
+{\em struct} & sll $\ast$sll\-\_\-node is the list that will be used. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct square$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file sll.\-c.
+

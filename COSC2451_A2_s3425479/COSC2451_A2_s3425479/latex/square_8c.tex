@@ -1,0 +1,102 @@
+\hypertarget{square_8c}{\section{src/square.c File Reference}
+\label{square_8c}\index{src/square.\-c@{src/square.\-c}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}square.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{square_8c_aa389540bba86aabaffda87ed2da6bf8f}{create\-\_\-square\-\_\-\-N\-U\-L\-L} ()
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{square_8c_a492d151d1480080f2508c68375ff10ee}{create\-\_\-square} (char value, int label, struct \hyperlink{structsquare}{square} $\ast$up, struct \hyperlink{structsquare}{square} $\ast$down, struct \hyperlink{structsquare}{square} $\ast$left, struct \hyperlink{structsquare}{square} $\ast$right)
+\item 
+void \hyperlink{square_8c_ac329771e05e6d6e16ca738e1e749d3a5}{insert\-\_\-right} (struct \hyperlink{structsquare}{square} $\ast$current\-\_\-node, struct \hyperlink{structsquare}{square} $\ast$right\-\_\-node)
+\item 
+void \hyperlink{square_8c_aab72b91628390970dff3edeb48f1160d}{insert\-\_\-down} (struct \hyperlink{structsquare}{square} $\ast$current\-\_\-node, struct \hyperlink{structsquare}{square} $\ast$down\-\_\-node)
+\item 
+void \hyperlink{square_8c_a2221a8b20b7d08aedbdb894cef88bff1}{square\-\_\-free} (struct \hyperlink{structsquare}{square} $\ast$current\-\_\-node)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{square_8c_a492d151d1480080f2508c68375ff10ee}{\index{square.\-c@{square.\-c}!create\-\_\-square@{create\-\_\-square}}
+\index{create\-\_\-square@{create\-\_\-square}!square.c@{square.\-c}}
+\subsubsection[{create\-\_\-square}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ create\-\_\-square (
+\begin{DoxyParamCaption}
+\item[{char}]{value, }
+\item[{int}]{label, }
+\item[{struct {\bf square} $\ast$}]{up, }
+\item[{struct {\bf square} $\ast$}]{down, }
+\item[{struct {\bf square} $\ast$}]{left, }
+\item[{struct {\bf square} $\ast$}]{right}
+\end{DoxyParamCaption}
+)}}\label{square_8c_a492d151d1480080f2508c68375ff10ee}
+Create the rest of the map 
+
+Definition at line 14 of file square.\-c.
+
+\hypertarget{square_8c_aa389540bba86aabaffda87ed2da6bf8f}{\index{square.\-c@{square.\-c}!create\-\_\-square\-\_\-\-N\-U\-L\-L@{create\-\_\-square\-\_\-\-N\-U\-L\-L}}
+\index{create\-\_\-square\-\_\-\-N\-U\-L\-L@{create\-\_\-square\-\_\-\-N\-U\-L\-L}!square.c@{square.\-c}}
+\subsubsection[{create\-\_\-square\-\_\-\-N\-U\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ create\-\_\-square\-\_\-\-N\-U\-L\-L (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{square_8c_aa389540bba86aabaffda87ed2da6bf8f}
+To create the first square node in the map 
+
+Definition at line 4 of file square.\-c.
+
+\hypertarget{square_8c_aab72b91628390970dff3edeb48f1160d}{\index{square.\-c@{square.\-c}!insert\-\_\-down@{insert\-\_\-down}}
+\index{insert\-\_\-down@{insert\-\_\-down}!square.c@{square.\-c}}
+\subsubsection[{insert\-\_\-down}]{\setlength{\rightskip}{0pt plus 5cm}void insert\-\_\-down (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{current\-\_\-node, }
+\item[{struct {\bf square} $\ast$}]{down\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{square_8c_aab72b91628390970dff3edeb48f1160d}
+insert the down square to the map 
+\begin{DoxyParams}{Parameters}
+{\em current\-\_\-node} & \\
+\hline
+{\em down\-\_\-node} & the node the insert down the current node \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file square.\-c.
+
+\hypertarget{square_8c_ac329771e05e6d6e16ca738e1e749d3a5}{\index{square.\-c@{square.\-c}!insert\-\_\-right@{insert\-\_\-right}}
+\index{insert\-\_\-right@{insert\-\_\-right}!square.c@{square.\-c}}
+\subsubsection[{insert\-\_\-right}]{\setlength{\rightskip}{0pt plus 5cm}void insert\-\_\-right (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{current\-\_\-node, }
+\item[{struct {\bf square} $\ast$}]{right\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{square_8c_ac329771e05e6d6e16ca738e1e749d3a5}
+insert to right square to the map 
+\begin{DoxyParams}{Parameters}
+{\em current\-\_\-node} & \\
+\hline
+{\em right\-\_\-node} & the next node to insert to the right \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file square.\-c.
+
+\hypertarget{square_8c_a2221a8b20b7d08aedbdb894cef88bff1}{\index{square.\-c@{square.\-c}!square\-\_\-free@{square\-\_\-free}}
+\index{square\-\_\-free@{square\-\_\-free}!square.c@{square.\-c}}
+\subsubsection[{square\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void square\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{current\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{square_8c_a2221a8b20b7d08aedbdb894cef88bff1}
+free the square after done writting or reading map 
+\begin{DoxyParams}{Parameters}
+{\em current\-\_\-node} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 43 of file square.\-c.
+

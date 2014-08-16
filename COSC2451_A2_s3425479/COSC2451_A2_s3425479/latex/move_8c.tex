@@ -1,0 +1,864 @@
+\hypertarget{move_8c}{\section{src/move.c File Reference}
+\label{move_8c}\index{src/move.\-c@{src/move.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$curses.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}move.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pg.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sll.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}square.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{move_8c_a0ffd34644bd00f0439238b3dcbb92a7d}{set\-All} (struct \hyperlink{structpg}{pg} $\ast$p, struct \hyperlink{structpg}{pg} $\ast$gst1, struct \hyperlink{structpg}{pg} $\ast$gst2, struct \hyperlink{structpg}{pg} $\ast$gst3, struct \hyperlink{structpg}{pg} $\ast$gst4)
+\item 
+void \hyperlink{move_8c_a7e7aeb00e8b22aa99a5c7dcb0e54b598}{move\-G} (struct \hyperlink{structpg}{pg} $\ast$ghost, char direction)
+\item 
+void \hyperlink{move_8c_a3b44a12bac0ab70427c1ac598232d1a4}{move\-P} (struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac}, char direction)
+\item 
+int \hyperlink{move_8c_a6990d91b6703300231dc962e8adca36a}{move\-Up} (struct \hyperlink{structpg}{pg} $\ast$\hyperlink{structpg}{pg}, char item)
+\item 
+int \hyperlink{move_8c_a8a6ba89a9045eecafdf4d7443b6498be}{move\-Down} (struct \hyperlink{structpg}{pg} $\ast$\hyperlink{structpg}{pg}, char item)
+\item 
+int \hyperlink{move_8c_a7a96889422daf230003c66f341496018}{move\-Left} (struct \hyperlink{structpg}{pg} $\ast$\hyperlink{structpg}{pg}, char item)
+\item 
+int \hyperlink{move_8c_aa23d0e9e6d31f70779ff7d2d3bf7c0d7}{move\-Right} (struct \hyperlink{structpg}{pg} $\ast$\hyperlink{structpg}{pg}, char item)
+\item 
+int \hyperlink{move_8c_a48547b8a954679749603bec99823ce21}{pacman\-F\-P} (int($\ast$funcs)(struct \hyperlink{structpg}{pg} $\ast$, char), struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac}, char item)
+\item 
+void \hyperlink{move_8c_ace22fd8991806ae98107c486cf2feaf4}{move\-Pacman} (struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac}, char item)
+\item 
+char \hyperlink{move_8c_a230b93249fac914419f6775ee32430dd}{chase\-Pacman\-Euclidean} (struct \hyperlink{structpg}{pg} $\ast$ghost, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac})
+\item 
+char \hyperlink{move_8c_ad14ebb26038fd115abe6b1bce5075bb2}{random\-Dir} (struct \hyperlink{structpg}{pg} $\ast$ghost, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac})
+\item 
+char \hyperlink{move_8c_a3cde231292d9b38f2d7b592cc69fe00d}{chase\-Pacman1} (struct \hyperlink{structpg}{pg} $\ast$ghost, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac})
+\item 
+char \hyperlink{move_8c_a14d01ea91ea10ac0815dd21ffe2a9549}{avoid\-Pacman1} (struct \hyperlink{structpg}{pg} $\ast$ghost, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac})
+\item 
+void \hyperlink{move_8c_a16046f12e4e54394b39993e172c49217}{moveghost1} (struct \hyperlink{structpg}{pg} $\ast$ghost, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac})
+\item 
+char \hyperlink{move_8c_a1fe538ba6aa30c956409a9747516abf0}{random\-Dir2} ()
+\begin{DoxyCompactList}\small\item\em Done Nguyen. \end{DoxyCompactList}\item 
+char \hyperlink{move_8c_afdfd7a4a47a20b68ff528d5d3ec6e29e}{square\-Value} (struct \hyperlink{structpg}{pg} $\ast$\hyperlink{structpg}{pg}, char direction)
+\item 
+bool \hyperlink{move_8c_aa8b8368105562294b84f17193597792c}{has\-No\-Wall} (char value)
+\item 
+char \hyperlink{move_8c_aa94344ffb52cd294ff69aacb4e3b13ff}{check\-Ghost\-When\-Stuck} (struct \hyperlink{structpg}{pg} $\ast$ghost, char direction)
+\item 
+char \hyperlink{move_8c_a699096511da76269a0d57fcab3c8f735}{chase\-Pacman2} (struct \hyperlink{structpg}{pg} $\ast$ghost, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac})
+\item 
+void \hyperlink{move_8c_a8c02fa03bcdbd4dbb282be57c6e245bd}{move\-By\-Direction} (struct \hyperlink{structpg}{pg} $\ast$\hyperlink{structpg}{pg})
+\item 
+char \hyperlink{move_8c_a89a1c64e365ac9d8befb5a46a20e31f2}{avoid\-Pacman2} (struct \hyperlink{structpg}{pg} $\ast$ghost, char dir)
+\item 
+void \hyperlink{move_8c_ae4f84555dae10d2c5221c2bd8dcd1107}{moveghost2} (struct \hyperlink{structpg}{pg} $\ast$ghost, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac})
+\item 
+bool \hyperlink{move_8c_acca2ef58d71d0690061ff7689024136e}{is\-Moveable} (struct \hyperlink{structsquare}{square} $\ast$node)
+\item 
+char \hyperlink{move_8c_afa24cf6c08759594860d3854ed257370}{chase\-Dir} (struct \hyperlink{structpg}{pg} $\ast$ghost, struct \hyperlink{structpg}{pg} $\ast$pacman)
+\item 
+void \hyperlink{move_8c_a5ac4572d30c395583561fafeb8082b5b}{moveghost3} (struct \hyperlink{structpg}{pg} $\ast$ghost, struct \hyperlink{structpg}{pg} $\ast$pacman)
+\item 
+char \hyperlink{move_8c_a87e0f6a4a143f68b0361e44d4002bde5}{avoid\-Pacman3} (struct \hyperlink{structpg}{pg} $\ast$ghost, struct \hyperlink{structpg}{pg} $\ast$pacman)
+\item 
+int \hyperlink{move_8c_a8fc183012e53bbecc23537b6d4245acb}{is\-\_\-wall\-\_\-power} (struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-node)
+\item 
+int \hyperlink{move_8c_a5aded60f3cf16cd86a0b322de6dc2104}{is\-\_\-not\-\_\-wall\-\_\-power} (struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-node)
+\item 
+int \hyperlink{move_8c_af93f2efea38b04e00ad70a1b88ddf523}{is\-\_\-wall} (struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-node)
+\item 
+int \hyperlink{move_8c_aba15908af86956f4a6f5e1b0202fef9a}{is\-\_\-not\-\_\-wall} (struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-node)
+\item 
+int \hyperlink{move_8c_afbc0f123ade60ab2cca4328481326c8d}{is\-\_\-conner} (struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-node, char previous)
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{move_8c_a6eb81ccf04726992a864c6392fe19382}{nextleft} (struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-pac)
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{move_8c_a32648283173f675509c63977942e3339}{nextright} (struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-pac)
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{move_8c_a7a325670db0941026c44a38db6fedf40}{nextup} (struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-pac)
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{move_8c_ac0331a968715cf4598bc8ca274c705e0}{nextdown} (struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-pac)
+\item 
+struct \hyperlink{structsquare}{square} $\ast$ \hyperlink{move_8c_a94b75320960f036c204f2945bd5f8af0}{find\-Conner} (struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac})
+\item 
+int \hyperlink{move_8c_acc028d1a6d44d0eadb4b8717e7cc2553}{find2} (struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-g4, struct \hyperlink{structsquare}{square} $\ast$sq\-\_\-pac, struct \hyperlink{structsll}{sll} $\ast$path, struct \hyperlink{structsll}{sll} $\ast$pac\-\_\-path, int count\-\_\-path, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a5f949ee9666ccfd69de3e11e4097b04a}{g4}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac})
+\item 
+void \hyperlink{move_8c_a87d849032ca0566fef15ec465f201651}{moveghost4} (struct \hyperlink{structpg}{pg} $\ast$\hyperlink{pacman_8c_a0754c374042f9baf8e673d7eca9a2ead}{ghost4}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{pacman_8c_a0c26912124b850af83a75f4bb5063e69}{ghost1}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{pacman_8c_abfdc28e76f8f9c90e42fb1aaa2db53de}{ghost2}, struct \hyperlink{structpg}{pg} $\ast$\hyperlink{pacman_8c_a49b2a777fc9a37d2565a844a20fef11a}{ghost3}, struct \hyperlink{structpg}{pg} $\ast$pacman, struct \hyperlink{structsll}{sll} $\ast$pac\-\_\-path, int cal\-\_\-pacpath)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{move_8c_a3d8ca3207aae1a45e77d360c877e675b}{olddir} = ' '
+\item 
+struct \hyperlink{structpg}{pg} $\ast$ \hyperlink{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{pac}
+\item 
+struct \hyperlink{structpg}{pg} $\ast$ \hyperlink{move_8c_aa289581d2a75f3252a0602f839ecb24b}{g1}
+\item 
+struct \hyperlink{structpg}{pg} $\ast$ \hyperlink{move_8c_a68939d9f4c43c264426f3ec8a73a4fb9}{g2}
+\item 
+struct \hyperlink{structpg}{pg} $\ast$ \hyperlink{move_8c_a3d7511715ba965b792322df91ba12f47}{g3}
+\item 
+struct \hyperlink{structpg}{pg} $\ast$ \hyperlink{move_8c_a5f949ee9666ccfd69de3e11e4097b04a}{g4}
+\item 
+char \hyperlink{move_8c_adb78078dc43d2eb2c6399331abe7b028}{f\-\_\-names\-Pacman} \mbox{[}$\,$\mbox{]} = \{'u', 'd', 'l', 'r'\}
+\item 
+int($\ast$ \hyperlink{move_8c_a11c1d79c000cca1b0312344d7e8a01ea}{funcs\-Pacman} \mbox{[}$\,$\mbox{]})(struct \hyperlink{structpg}{pg} $\ast$, char) = \{\hyperlink{move_8h_a052fdf01af6ea71fdefcca7f81cdd960}{move\-Up}, \hyperlink{move_8h_a5161a893ac4d23ae0a2e70a689e3b091}{move\-Down}, \hyperlink{move_8h_a59ee99cf038c1bc36aa21b12d7ea0809}{move\-Left}, \hyperlink{move_8h_ae22d39fd6181e184fd226505254c1d9a}{move\-Right}\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{move_8c_a14d01ea91ea10ac0815dd21ffe2a9549}{\index{move.\-c@{move.\-c}!avoid\-Pacman1@{avoid\-Pacman1}}
+\index{avoid\-Pacman1@{avoid\-Pacman1}!move.c@{move.\-c}}
+\subsubsection[{avoid\-Pacman1}]{\setlength{\rightskip}{0pt plus 5cm}char avoid\-Pacman1 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost, }
+\item[{struct {\bf pg} $\ast$}]{pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a14d01ea91ea10ac0815dd21ffe2a9549}
+when pacman is in the power mode the ghost will move away from the pacman when pacman and ghost in the row or column 
+
+Definition at line 432 of file move.\-c.
+
+\hypertarget{move_8c_a89a1c64e365ac9d8befb5a46a20e31f2}{\index{move.\-c@{move.\-c}!avoid\-Pacman2@{avoid\-Pacman2}}
+\index{avoid\-Pacman2@{avoid\-Pacman2}!move.c@{move.\-c}}
+\subsubsection[{avoid\-Pacman2}]{\setlength{\rightskip}{0pt plus 5cm}char avoid\-Pacman2 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost, }
+\item[{char}]{dir}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a89a1c64e365ac9d8befb5a46a20e31f2}
+
+
+Definition at line 634 of file move.\-c.
+
+\hypertarget{move_8c_a87e0f6a4a143f68b0361e44d4002bde5}{\index{move.\-c@{move.\-c}!avoid\-Pacman3@{avoid\-Pacman3}}
+\index{avoid\-Pacman3@{avoid\-Pacman3}!move.c@{move.\-c}}
+\subsubsection[{avoid\-Pacman3}]{\setlength{\rightskip}{0pt plus 5cm}char avoid\-Pacman3 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost, }
+\item[{struct {\bf pg} $\ast$}]{pacman}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a87e0f6a4a143f68b0361e44d4002bde5}
+this method run when the game in power mode, the ghost will run away from the pacman 
+\begin{DoxyParams}{Parameters}
+{\em square} & $\ast$ghost is a struct of the ghost \\
+\hline
+{\em square} & $\ast$pacman is a struct of the pacman \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 784 of file move.\-c.
+
+\hypertarget{move_8c_afa24cf6c08759594860d3854ed257370}{\index{move.\-c@{move.\-c}!chase\-Dir@{chase\-Dir}}
+\index{chase\-Dir@{chase\-Dir}!move.c@{move.\-c}}
+\subsubsection[{chase\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}char chase\-Dir (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost, }
+\item[{struct {\bf pg} $\ast$}]{pacman}
+\end{DoxyParamCaption}
+)}}\label{move_8c_afa24cf6c08759594860d3854ed257370}
+this method contains simple algorithm to chase the pacman 
+\begin{DoxyParams}{Parameters}
+{\em square} & $\ast$ghost is a struct of the ghost \\
+\hline
+{\em square} & $\ast$pacman is a struct of the pacman \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 683 of file move.\-c.
+
+\hypertarget{move_8c_a3cde231292d9b38f2d7b592cc69fe00d}{\index{move.\-c@{move.\-c}!chase\-Pacman1@{chase\-Pacman1}}
+\index{chase\-Pacman1@{chase\-Pacman1}!move.c@{move.\-c}}
+\subsubsection[{chase\-Pacman1}]{\setlength{\rightskip}{0pt plus 5cm}char chase\-Pacman1 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost, }
+\item[{struct {\bf pg} $\ast$}]{pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a3cde231292d9b38f2d7b592cc69fe00d}
+chase pacman only when pacman is in the same row or column with ghost else it will move randomly param struct pg$\ast$ ghost -\/$>$ ghost param struct pg$\ast$ pac -\/$>$ pacman 
+
+Definition at line 414 of file move.\-c.
+
+\hypertarget{move_8c_a699096511da76269a0d57fcab3c8f735}{\index{move.\-c@{move.\-c}!chase\-Pacman2@{chase\-Pacman2}}
+\index{chase\-Pacman2@{chase\-Pacman2}!move.c@{move.\-c}}
+\subsubsection[{chase\-Pacman2}]{\setlength{\rightskip}{0pt plus 5cm}char chase\-Pacman2 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost, }
+\item[{struct {\bf pg} $\ast$}]{pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a699096511da76269a0d57fcab3c8f735}
+return the direction when the ghost is chase the pacman
+
+
+\begin{DoxyParams}{Parameters}
+{\em struct} & ghost is a struck of the ghost \\
+\hline
+{\em struct} & pacman is a struck of the pacman \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 556 of file move.\-c.
+
+\hypertarget{move_8c_a230b93249fac914419f6775ee32430dd}{\index{move.\-c@{move.\-c}!chase\-Pacman\-Euclidean@{chase\-Pacman\-Euclidean}}
+\index{chase\-Pacman\-Euclidean@{chase\-Pacman\-Euclidean}!move.c@{move.\-c}}
+\subsubsection[{chase\-Pacman\-Euclidean}]{\setlength{\rightskip}{0pt plus 5cm}char chase\-Pacman\-Euclidean (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost, }
+\item[{struct {\bf pg} $\ast$}]{pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a230b93249fac914419f6775ee32430dd}
+when ghost is at intersection it will look and calculate the distance between it and pacman and choose the shortest direction toward pacmn 
+
+Definition at line 332 of file move.\-c.
+
+\hypertarget{move_8c_aa94344ffb52cd294ff69aacb4e3b13ff}{\index{move.\-c@{move.\-c}!check\-Ghost\-When\-Stuck@{check\-Ghost\-When\-Stuck}}
+\index{check\-Ghost\-When\-Stuck@{check\-Ghost\-When\-Stuck}!move.c@{move.\-c}}
+\subsubsection[{check\-Ghost\-When\-Stuck}]{\setlength{\rightskip}{0pt plus 5cm}char check\-Ghost\-When\-Stuck (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost, }
+\item[{char}]{direction}
+\end{DoxyParamCaption}
+)}}\label{move_8c_aa94344ffb52cd294ff69aacb4e3b13ff}
+return the direction when the ghost is stuck
+
+
+\begin{DoxyParams}{Parameters}
+{\em struct} & pg is a struck of the ghost \\
+\hline
+{\em direction} & is a direction of the ghost \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 525 of file move.\-c.
+
+\hypertarget{move_8c_acc028d1a6d44d0eadb4b8717e7cc2553}{\index{move.\-c@{move.\-c}!find2@{find2}}
+\index{find2@{find2}!move.c@{move.\-c}}
+\subsubsection[{find2}]{\setlength{\rightskip}{0pt plus 5cm}int find2 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-g4, }
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-pac, }
+\item[{struct {\bf sll} $\ast$}]{path, }
+\item[{struct {\bf sll} $\ast$}]{pac\-\_\-path, }
+\item[{int}]{count\-\_\-path, }
+\item[{struct {\bf pg} $\ast$}]{g4, }
+\item[{struct {\bf pg} $\ast$}]{pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_acc028d1a6d44d0eadb4b8717e7cc2553}
+this method will find the short path from ghost to pacman by using recursive algorithm. 
+\begin{DoxyParams}{Parameters}
+{\em square} & $\ast$sq\-\_\-g4 is a struct pointer of the square that ghost4 is currently at. \\
+\hline
+{\em square} & $\ast$sq\-\_\-pac is a struct pointer of the square that pacman is currently at. \\
+\hline
+{\em sll$\ast$} & path is a struct pointer of singly link list that used to store the conner that recursive function find2 use to check the path in order to return. \\
+\hline
+{\em sll$\ast$} & pac\-\_\-path is a struct pointer of singly link list that used to store the path of pacman. \\
+\hline
+{\em int} & count\-\_\-path is the number of square that ghost will go through before it reach pacman in order to find the short path. \\
+\hline
+{\em pg$\ast$} & g4 is the struct pointer of the the pg ghost4 \\
+\hline
+{\em pg$\ast$} & pac is the struct pointer of the the pg pacman \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int is the number of squares that recursive function return. 
+\end{DoxyReturn}
+
+
+Definition at line 1174 of file move.\-c.
+
+\hypertarget{move_8c_a94b75320960f036c204f2945bd5f8af0}{\index{move.\-c@{move.\-c}!find\-Conner@{find\-Conner}}
+\index{find\-Conner@{find\-Conner}!move.c@{move.\-c}}
+\subsubsection[{find\-Conner}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ find\-Conner (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a94b75320960f036c204f2945bd5f8af0}
+this method will find the next conner that pacman will move to base on it's direction. Otherwise, this function will return the current square of pacman. This function will check directions that pacman could go, then call these following functions. nextdown, nextleft, nextright, nextup 
+\begin{DoxyParams}{Parameters}
+{\em pg} & $\ast$pac is the square pointer of the square that need to be check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct square$\ast$ which is the next conner or current position of pacman. 
+\end{DoxyReturn}
+
+
+Definition at line 977 of file move.\-c.
+
+\hypertarget{move_8c_aa8b8368105562294b84f17193597792c}{\index{move.\-c@{move.\-c}!has\-No\-Wall@{has\-No\-Wall}}
+\index{has\-No\-Wall@{has\-No\-Wall}!move.c@{move.\-c}}
+\subsubsection[{has\-No\-Wall}]{\setlength{\rightskip}{0pt plus 5cm}bool has\-No\-Wall (
+\begin{DoxyParamCaption}
+\item[{char}]{value}
+\end{DoxyParamCaption}
+)}}\label{move_8c_aa8b8368105562294b84f17193597792c}
+return fasle when the value is a wall 
+\begin{DoxyParams}{Parameters}
+{\em char} & value is a value of the square \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 517 of file move.\-c.
+
+\hypertarget{move_8c_afbc0f123ade60ab2cca4328481326c8d}{\index{move.\-c@{move.\-c}!is\-\_\-conner@{is\-\_\-conner}}
+\index{is\-\_\-conner@{is\-\_\-conner}!move.c@{move.\-c}}
+\subsubsection[{is\-\_\-conner}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-conner (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-node, }
+\item[{char}]{previous}
+\end{DoxyParamCaption}
+)}}\label{move_8c_afbc0f123ade60ab2cca4328481326c8d}
+this method will check whether the square parameter input is the conner or not this function will return 1 which is consider true. 
+\begin{DoxyParams}{Parameters}
+{\em square$\ast$} & sq\-\_\-node is the square pointer of the square that need to be check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 which is consider true when that square is conner 
+\end{DoxyReturn}
+
+
+Definition at line 904 of file move.\-c.
+
+\hypertarget{move_8c_aba15908af86956f4a6f5e1b0202fef9a}{\index{move.\-c@{move.\-c}!is\-\_\-not\-\_\-wall@{is\-\_\-not\-\_\-wall}}
+\index{is\-\_\-not\-\_\-wall@{is\-\_\-not\-\_\-wall}!move.c@{move.\-c}}
+\subsubsection[{is\-\_\-not\-\_\-wall}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-not\-\_\-wall (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{move_8c_aba15908af86956f4a6f5e1b0202fef9a}
+this method will revert the function \hyperlink{move_8c_af93f2efea38b04e00ad70a1b88ddf523}{is\-\_\-wall()} 
+\begin{DoxyParams}{Parameters}
+{\em square} & $\ast$sq\-\_\-node is the square pointer of the square that need to be check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 which is consider true when that square is wall 
+\end{DoxyReturn}
+
+
+Definition at line 895 of file move.\-c.
+
+\hypertarget{move_8c_a5aded60f3cf16cd86a0b322de6dc2104}{\index{move.\-c@{move.\-c}!is\-\_\-not\-\_\-wall\-\_\-power@{is\-\_\-not\-\_\-wall\-\_\-power}}
+\index{is\-\_\-not\-\_\-wall\-\_\-power@{is\-\_\-not\-\_\-wall\-\_\-power}!move.c@{move.\-c}}
+\subsubsection[{is\-\_\-not\-\_\-wall\-\_\-power}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-not\-\_\-wall\-\_\-power (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a5aded60f3cf16cd86a0b322de6dc2104}
+this method will revert the function \hyperlink{move_8c_a8fc183012e53bbecc23537b6d4245acb}{is\-\_\-wall\-\_\-power()} 
+\begin{DoxyParams}{Parameters}
+{\em square} & $\ast$sq\-\_\-node is the square pointer of the square that need to be check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 which is consider true when that square is wall 
+\end{DoxyReturn}
+
+
+Definition at line 880 of file move.\-c.
+
+\hypertarget{move_8c_af93f2efea38b04e00ad70a1b88ddf523}{\index{move.\-c@{move.\-c}!is\-\_\-wall@{is\-\_\-wall}}
+\index{is\-\_\-wall@{is\-\_\-wall}!move.c@{move.\-c}}
+\subsubsection[{is\-\_\-wall}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-wall (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{move_8c_af93f2efea38b04e00ad70a1b88ddf523}
+this method will return 1 which is consider true when the pointer square parameter is a wall Ghost is considered a wall in this function. 
+\begin{DoxyParams}{Parameters}
+{\em square} & $\ast$sq\-\_\-node is the square pointer of the square that need to be check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 which is consider true when that square is wall 
+\end{DoxyReturn}
+
+
+Definition at line 887 of file move.\-c.
+
+\hypertarget{move_8c_a8fc183012e53bbecc23537b6d4245acb}{\index{move.\-c@{move.\-c}!is\-\_\-wall\-\_\-power@{is\-\_\-wall\-\_\-power}}
+\index{is\-\_\-wall\-\_\-power@{is\-\_\-wall\-\_\-power}!move.c@{move.\-c}}
+\subsubsection[{is\-\_\-wall\-\_\-power}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-wall\-\_\-power (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-node}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a8fc183012e53bbecc23537b6d4245acb}
+this method will return 1 which is consider true when the pointer square parameter is a wall in power mode. Ghost is considered not a wall in this function. 
+\begin{DoxyParams}{Parameters}
+{\em square} & $\ast$sq\-\_\-node is the square pointer of the square that need to be check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 which is consider true when that square is wall 
+\end{DoxyReturn}
+
+
+Definition at line 872 of file move.\-c.
+
+\hypertarget{move_8c_acca2ef58d71d0690061ff7689024136e}{\index{move.\-c@{move.\-c}!is\-Moveable@{is\-Moveable}}
+\index{is\-Moveable@{is\-Moveable}!move.c@{move.\-c}}
+\subsubsection[{is\-Moveable}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-Moveable (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{move_8c_acca2ef58d71d0690061ff7689024136e}
+this method checks the next square node can be moveable or not (for all 4 directions) 
+\begin{DoxyParams}{Parameters}
+{\em square} & $\ast$node is a struct used to pass the next node to check this node \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 676 of file move.\-c.
+
+\hypertarget{move_8c_a8c02fa03bcdbd4dbb282be57c6e245bd}{\index{move.\-c@{move.\-c}!move\-By\-Direction@{move\-By\-Direction}}
+\index{move\-By\-Direction@{move\-By\-Direction}!move.c@{move.\-c}}
+\subsubsection[{move\-By\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}void move\-By\-Direction (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{pg}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a8c02fa03bcdbd4dbb282be57c6e245bd}
+move the ghost by the direction 
+\begin{DoxyParams}{Parameters}
+{\em struct} & pg is a struck of the ghost \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 619 of file move.\-c.
+
+\hypertarget{move_8c_a8a6ba89a9045eecafdf4d7443b6498be}{\index{move.\-c@{move.\-c}!move\-Down@{move\-Down}}
+\index{move\-Down@{move\-Down}!move.c@{move.\-c}}
+\subsubsection[{move\-Down}]{\setlength{\rightskip}{0pt plus 5cm}int move\-Down (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{pac, }
+\item[{char}]{item}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a8a6ba89a9045eecafdf4d7443b6498be}
+this method will move either ghost or pacman down one step. 
+\begin{DoxyParams}{Parameters}
+{\em pg} & $\ast$pac is a struct poiter of the ghost or pacman. \\
+\hline
+{\em char} & item will specify struct pg is ghost or pacman. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 153 of file move.\-c.
+
+\hypertarget{move_8c_a7e7aeb00e8b22aa99a5c7dcb0e54b598}{\index{move.\-c@{move.\-c}!move\-G@{move\-G}}
+\index{move\-G@{move\-G}!move.c@{move.\-c}}
+\subsubsection[{move\-G}]{\setlength{\rightskip}{0pt plus 5cm}void move\-G (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost, }
+\item[{char}]{direction}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a7e7aeb00e8b22aa99a5c7dcb0e54b598}
+this method will move ghost 1 step in specific direction this method also check whether that direction is available for ghost to go 
+\begin{DoxyParams}{Parameters}
+{\em pg} & $\ast$ghost is a struct poiter of the ghost. \\
+\hline
+{\em char} & direction is direction that ghost will move. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file move.\-c.
+
+\hypertarget{move_8c_a16046f12e4e54394b39993e172c49217}{\index{move.\-c@{move.\-c}!moveghost1@{moveghost1}}
+\index{moveghost1@{moveghost1}!move.c@{move.\-c}}
+\subsubsection[{moveghost1}]{\setlength{\rightskip}{0pt plus 5cm}void moveghost1 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost, }
+\item[{struct {\bf pg} $\ast$}]{pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a16046f12e4e54394b39993e172c49217}
+use to move the ghost around in the maze according to the algorithm 
+
+Definition at line 451 of file move.\-c.
+
+\hypertarget{move_8c_ae4f84555dae10d2c5221c2bd8dcd1107}{\index{move.\-c@{move.\-c}!moveghost2@{moveghost2}}
+\index{moveghost2@{moveghost2}!move.c@{move.\-c}}
+\subsubsection[{moveghost2}]{\setlength{\rightskip}{0pt plus 5cm}void moveghost2 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost2, }
+\item[{struct {\bf pg} $\ast$}]{pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_ae4f84555dae10d2c5221c2bd8dcd1107}
+move the ghost2 
+\begin{DoxyParams}{Parameters}
+{\em struct} & pg is a struck of the ghost \\
+\hline
+{\em struct} & pac is a struck of the pacman \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 647 of file move.\-c.
+
+\hypertarget{move_8c_a5ac4572d30c395583561fafeb8082b5b}{\index{move.\-c@{move.\-c}!moveghost3@{moveghost3}}
+\index{moveghost3@{moveghost3}!move.c@{move.\-c}}
+\subsubsection[{moveghost3}]{\setlength{\rightskip}{0pt plus 5cm}void moveghost3 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost, }
+\item[{struct {\bf pg} $\ast$}]{pacman}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a5ac4572d30c395583561fafeb8082b5b}
+this method control 2 modes are normal and power mode, it also take the direction from the \hyperlink{move_8c_afa24cf6c08759594860d3854ed257370}{chase\-Dir()} above to control the ghost follow the pacman 
+\begin{DoxyParams}{Parameters}
+{\em square} & $\ast$ghost is a struct of the ghost \\
+\hline
+{\em square} & $\ast$pacman is a struct of the pacman \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 761 of file move.\-c.
+
+\hypertarget{move_8c_a87d849032ca0566fef15ec465f201651}{\index{move.\-c@{move.\-c}!moveghost4@{moveghost4}}
+\index{moveghost4@{moveghost4}!move.c@{move.\-c}}
+\subsubsection[{moveghost4}]{\setlength{\rightskip}{0pt plus 5cm}void moveghost4 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost4, }
+\item[{struct {\bf pg} $\ast$}]{ghost1, }
+\item[{struct {\bf pg} $\ast$}]{ghost2, }
+\item[{struct {\bf pg} $\ast$}]{ghost3, }
+\item[{struct {\bf pg} $\ast$}]{pacman, }
+\item[{struct {\bf sll} $\ast$}]{pac\-\_\-path, }
+\item[{int}]{cal\-\_\-pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a87d849032ca0566fef15ec465f201651}
+this method contains algorithm of ghost4. It will predict the next conner that pacman will move to, then the ghost will go to there. there is pac\-\_\-path, which is the path that pacman will follow. This path will be re-\/calculate when pacman move out of the current path. 
+\begin{DoxyParams}{Parameters}
+{\em pg$\ast$} & ghost4 is a struct pointer of the ghost4 \\
+\hline
+{\em pg$\ast$} & ghost1 is a struct pointer of the ghost1 \\
+\hline
+{\em pg$\ast$} & ghost2 is a struct pointer of the ghost2 \\
+\hline
+{\em pg$\ast$} & ghost3 is a struct pointer of the ghost3 \\
+\hline
+{\em pg$\ast$} & pacman is a struct pointer of the pacman \\
+\hline
+{\em sll$\ast$} & pac\-\_\-path is a struct pointer of singly link list that used to store the path of pacman. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1564 of file move.\-c.
+
+\hypertarget{move_8c_a7a96889422daf230003c66f341496018}{\index{move.\-c@{move.\-c}!move\-Left@{move\-Left}}
+\index{move\-Left@{move\-Left}!move.c@{move.\-c}}
+\subsubsection[{move\-Left}]{\setlength{\rightskip}{0pt plus 5cm}int move\-Left (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{pac, }
+\item[{char}]{item}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a7a96889422daf230003c66f341496018}
+this method will move either ghost or pacman left one step. 
+\begin{DoxyParams}{Parameters}
+{\em pg} & $\ast$pac is a struct poiter of the ghost or pacman. \\
+\hline
+{\em char} & item will specify struct pg is ghost or pacman. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 208 of file move.\-c.
+
+\hypertarget{move_8c_a3b44a12bac0ab70427c1ac598232d1a4}{\index{move.\-c@{move.\-c}!move\-P@{move\-P}}
+\index{move\-P@{move\-P}!move.c@{move.\-c}}
+\subsubsection[{move\-P}]{\setlength{\rightskip}{0pt plus 5cm}void move\-P (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{pac, }
+\item[{char}]{direction}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a3b44a12bac0ab70427c1ac598232d1a4}
+this method will move pacman 1 step in specific direction this method also check whether that direction is available for pacman to go 
+\begin{DoxyParams}{Parameters}
+{\em pg} & $\ast$ghost is a struct poiter of the ghost. \\
+\hline
+{\em char} & direction is direction that ghost will move. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file move.\-c.
+
+\hypertarget{move_8c_ace22fd8991806ae98107c486cf2feaf4}{\index{move.\-c@{move.\-c}!move\-Pacman@{move\-Pacman}}
+\index{move\-Pacman@{move\-Pacman}!move.c@{move.\-c}}
+\subsubsection[{move\-Pacman}]{\setlength{\rightskip}{0pt plus 5cm}void move\-Pacman (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{pac, }
+\item[{char}]{item}
+\end{DoxyParamCaption}
+)}}\label{move_8c_ace22fd8991806ae98107c486cf2feaf4}
+this method will move pacman base on the direction of pacman, which is specify in struct pg. 
+\begin{DoxyParams}{Parameters}
+{\em pg} & $\ast$pac is a struct poiter of the ghost or pacman. \\
+\hline
+{\em char} & item will specify struct pg is ghost or pacman. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 322 of file move.\-c.
+
+\hypertarget{move_8c_aa23d0e9e6d31f70779ff7d2d3bf7c0d7}{\index{move.\-c@{move.\-c}!move\-Right@{move\-Right}}
+\index{move\-Right@{move\-Right}!move.c@{move.\-c}}
+\subsubsection[{move\-Right}]{\setlength{\rightskip}{0pt plus 5cm}int move\-Right (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{pac, }
+\item[{char}]{item}
+\end{DoxyParamCaption}
+)}}\label{move_8c_aa23d0e9e6d31f70779ff7d2d3bf7c0d7}
+this method will move either ghost or pacman right one step. 
+\begin{DoxyParams}{Parameters}
+{\em pg} & $\ast$pac is a struct poiter of the ghost or pacman. \\
+\hline
+{\em char} & item will specify struct pg is ghost or pacman. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 263 of file move.\-c.
+
+\hypertarget{move_8c_a6990d91b6703300231dc962e8adca36a}{\index{move.\-c@{move.\-c}!move\-Up@{move\-Up}}
+\index{move\-Up@{move\-Up}!move.c@{move.\-c}}
+\subsubsection[{move\-Up}]{\setlength{\rightskip}{0pt plus 5cm}int move\-Up (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{pac, }
+\item[{char}]{item}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a6990d91b6703300231dc962e8adca36a}
+this method will move either ghost or pacman up one step. 
+\begin{DoxyParams}{Parameters}
+{\em pg} & $\ast$pac is a struct poiter of the ghost or pacman. \\
+\hline
+{\em char} & item will specify struct pg is ghost or pacman. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 98 of file move.\-c.
+
+\hypertarget{move_8c_ac0331a968715cf4598bc8ca274c705e0}{\index{move.\-c@{move.\-c}!nextdown@{nextdown}}
+\index{nextdown@{nextdown}!move.c@{move.\-c}}
+\subsubsection[{nextdown}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ nextdown (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_ac0331a968715cf4598bc8ca274c705e0}
+this method will find the next conner in the down direction. Otherwise, this function will return the current square of pacman. 
+\begin{DoxyParams}{Parameters}
+{\em pg} & $\ast$pac is the square pointer of the square that need to be check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct square$\ast$ which is the next conner or current position of pacman. 
+\end{DoxyReturn}
+
+
+Definition at line 964 of file move.\-c.
+
+\hypertarget{move_8c_a6eb81ccf04726992a864c6392fe19382}{\index{move.\-c@{move.\-c}!nextleft@{nextleft}}
+\index{nextleft@{nextleft}!move.c@{move.\-c}}
+\subsubsection[{nextleft}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ nextleft (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a6eb81ccf04726992a864c6392fe19382}
+this method will find the next conner in the left direction. Otherwise, this function will return the current square of pacman. 
+\begin{DoxyParams}{Parameters}
+{\em pg} & $\ast$pac is the square pointer of the square that need to be check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct square$\ast$ which is the next conner or current position of pacman. 
+\end{DoxyReturn}
+
+
+Definition at line 925 of file move.\-c.
+
+\hypertarget{move_8c_a32648283173f675509c63977942e3339}{\index{move.\-c@{move.\-c}!nextright@{nextright}}
+\index{nextright@{nextright}!move.c@{move.\-c}}
+\subsubsection[{nextright}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ nextright (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a32648283173f675509c63977942e3339}
+this method will find the next conner in the right direction. Otherwise, this function will return the current square of pacman. 
+\begin{DoxyParams}{Parameters}
+{\em pg} & $\ast$pac is the square pointer of the square that need to be check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct square$\ast$ which is the next conner or current position of pacman. 
+\end{DoxyReturn}
+
+
+Definition at line 938 of file move.\-c.
+
+\hypertarget{move_8c_a7a325670db0941026c44a38db6fedf40}{\index{move.\-c@{move.\-c}!nextup@{nextup}}
+\index{nextup@{nextup}!move.c@{move.\-c}}
+\subsubsection[{nextup}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf square}$\ast$ nextup (
+\begin{DoxyParamCaption}
+\item[{struct {\bf square} $\ast$}]{sq\-\_\-pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a7a325670db0941026c44a38db6fedf40}
+this method will find the next conner in the up direction. Otherwise, this function will return the current square of pacman. 
+\begin{DoxyParams}{Parameters}
+{\em pg} & $\ast$pac is the square pointer of the square that need to be check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct square$\ast$ which is the next conner or current position of pacman. 
+\end{DoxyReturn}
+
+
+Definition at line 951 of file move.\-c.
+
+\hypertarget{move_8c_a48547b8a954679749603bec99823ce21}{\index{move.\-c@{move.\-c}!pacman\-F\-P@{pacman\-F\-P}}
+\index{pacman\-F\-P@{pacman\-F\-P}!move.c@{move.\-c}}
+\subsubsection[{pacman\-F\-P}]{\setlength{\rightskip}{0pt plus 5cm}int pacman\-F\-P (
+\begin{DoxyParamCaption}
+\item[{int($\ast$)(struct {\bf pg} $\ast$, char)}]{funcs, }
+\item[{struct {\bf pg} $\ast$}]{pac, }
+\item[{char}]{item}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a48547b8a954679749603bec99823ce21}
+this is function pointer which will call these following functions move\-Up, move\-Down, move\-Left, move\-Right 
+
+Definition at line 318 of file move.\-c.
+
+\hypertarget{move_8c_ad14ebb26038fd115abe6b1bce5075bb2}{\index{move.\-c@{move.\-c}!random\-Dir@{random\-Dir}}
+\index{random\-Dir@{random\-Dir}!move.c@{move.\-c}}
+\subsubsection[{random\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}char random\-Dir (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{ghost, }
+\item[{struct {\bf pg} $\ast$}]{pac}
+\end{DoxyParamCaption}
+)}}\label{move_8c_ad14ebb26038fd115abe6b1bce5075bb2}
+move the ghost in random way, in the maze until the ghost is at the intersection, then it will calculate which way to take next param struct pg$\ast$ ghost represents the ghost param struct pg$\ast$ pac represents pacman 
+
+Definition at line 357 of file move.\-c.
+
+\hypertarget{move_8c_a1fe538ba6aa30c956409a9747516abf0}{\index{move.\-c@{move.\-c}!random\-Dir2@{random\-Dir2}}
+\index{random\-Dir2@{random\-Dir2}!move.c@{move.\-c}}
+\subsubsection[{random\-Dir2}]{\setlength{\rightskip}{0pt plus 5cm}char random\-Dir2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a1fe538ba6aa30c956409a9747516abf0}
+
+
+Done Nguyen. 
+
+return random direction(‘u’,’r’,’l’,’d’) 
+
+Definition at line 485 of file move.\-c.
+
+\hypertarget{move_8c_a0ffd34644bd00f0439238b3dcbb92a7d}{\index{move.\-c@{move.\-c}!set\-All@{set\-All}}
+\index{set\-All@{set\-All}!move.c@{move.\-c}}
+\subsubsection[{set\-All}]{\setlength{\rightskip}{0pt plus 5cm}void set\-All (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{p, }
+\item[{struct {\bf pg} $\ast$}]{gst1, }
+\item[{struct {\bf pg} $\ast$}]{gst2, }
+\item[{struct {\bf pg} $\ast$}]{gst3, }
+\item[{struct {\bf pg} $\ast$}]{gst4}
+\end{DoxyParamCaption}
+)}}\label{move_8c_a0ffd34644bd00f0439238b3dcbb92a7d}
+declare array with each char is a element 
+
+Definition at line 18 of file move.\-c.
+
+\hypertarget{move_8c_afdfd7a4a47a20b68ff528d5d3ec6e29e}{\index{move.\-c@{move.\-c}!square\-Value@{square\-Value}}
+\index{square\-Value@{square\-Value}!move.c@{move.\-c}}
+\subsubsection[{square\-Value}]{\setlength{\rightskip}{0pt plus 5cm}char square\-Value (
+\begin{DoxyParamCaption}
+\item[{struct {\bf pg} $\ast$}]{pg, }
+\item[{char}]{direction}
+\end{DoxyParamCaption}
+)}}\label{move_8c_afdfd7a4a47a20b68ff528d5d3ec6e29e}
+return value of that square by that direction 
+\begin{DoxyParams}{Parameters}
+{\em struct} & pg$\ast$ pg is a struct of ghost \\
+\hline
+{\em char} & direction is a direction the ghost want to go next \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 500 of file move.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{move_8c_adb78078dc43d2eb2c6399331abe7b028}{\index{move.\-c@{move.\-c}!f\-\_\-names\-Pacman@{f\-\_\-names\-Pacman}}
+\index{f\-\_\-names\-Pacman@{f\-\_\-names\-Pacman}!move.c@{move.\-c}}
+\subsubsection[{f\-\_\-names\-Pacman}]{\setlength{\rightskip}{0pt plus 5cm}char f\-\_\-names\-Pacman\mbox{[}$\,$\mbox{]} = \{'u', 'd', 'l', 'r'\}}}\label{move_8c_adb78078dc43d2eb2c6399331abe7b028}
+
+
+Definition at line 26 of file move.\-c.
+
+\hypertarget{move_8c_a11c1d79c000cca1b0312344d7e8a01ea}{\index{move.\-c@{move.\-c}!funcs\-Pacman@{funcs\-Pacman}}
+\index{funcs\-Pacman@{funcs\-Pacman}!move.c@{move.\-c}}
+\subsubsection[{funcs\-Pacman}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ funcs\-Pacman\mbox{[}$\,$\mbox{]})(struct {\bf pg} $\ast$, char) = \{{\bf move\-Up}, {\bf move\-Down}, {\bf move\-Left}, {\bf move\-Right}\}}}\label{move_8c_a11c1d79c000cca1b0312344d7e8a01ea}
+
+
+Definition at line 30 of file move.\-c.
+
+\hypertarget{move_8c_aa289581d2a75f3252a0602f839ecb24b}{\index{move.\-c@{move.\-c}!g1@{g1}}
+\index{g1@{g1}!move.c@{move.\-c}}
+\subsubsection[{g1}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pg}$\ast$ g1}}\label{move_8c_aa289581d2a75f3252a0602f839ecb24b}
+
+
+Definition at line 13 of file move.\-c.
+
+\hypertarget{move_8c_a68939d9f4c43c264426f3ec8a73a4fb9}{\index{move.\-c@{move.\-c}!g2@{g2}}
+\index{g2@{g2}!move.c@{move.\-c}}
+\subsubsection[{g2}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pg}$\ast$ g2}}\label{move_8c_a68939d9f4c43c264426f3ec8a73a4fb9}
+
+
+Definition at line 14 of file move.\-c.
+
+\hypertarget{move_8c_a3d7511715ba965b792322df91ba12f47}{\index{move.\-c@{move.\-c}!g3@{g3}}
+\index{g3@{g3}!move.c@{move.\-c}}
+\subsubsection[{g3}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pg}$\ast$ g3}}\label{move_8c_a3d7511715ba965b792322df91ba12f47}
+
+
+Definition at line 15 of file move.\-c.
+
+\hypertarget{move_8c_a5f949ee9666ccfd69de3e11e4097b04a}{\index{move.\-c@{move.\-c}!g4@{g4}}
+\index{g4@{g4}!move.c@{move.\-c}}
+\subsubsection[{g4}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pg}$\ast$ g4}}\label{move_8c_a5f949ee9666ccfd69de3e11e4097b04a}
+
+
+Definition at line 16 of file move.\-c.
+
+\hypertarget{move_8c_a3d8ca3207aae1a45e77d360c877e675b}{\index{move.\-c@{move.\-c}!olddir@{olddir}}
+\index{olddir@{olddir}!move.c@{move.\-c}}
+\subsubsection[{olddir}]{\setlength{\rightskip}{0pt plus 5cm}char olddir = ' '}}\label{move_8c_a3d8ca3207aae1a45e77d360c877e675b}
+
+
+Definition at line 10 of file move.\-c.
+
+\hypertarget{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}{\index{move.\-c@{move.\-c}!pac@{pac}}
+\index{pac@{pac}!move.c@{move.\-c}}
+\subsubsection[{pac}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf pg}$\ast$ pac}}\label{move_8c_a700fb48d56ac11ae0166fc4ba8f53e7e}
+
+
+Definition at line 12 of file move.\-c.
+

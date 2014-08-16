@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['main',['main',['../pacman_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'pacman.c']]],
+  ['map',['map',['../structmap.html',1,'']]],
+  ['map_2ec',['map.c',['../map_8c.html',1,'']]],
+  ['map_2eh',['map.h',['../map_8h.html',1,'']]],
+  ['map_5fedit',['map_edit',['../map_8c.html#a5ca3d8d5d1de033c5b21bc53f97a2767',1,'map_edit(struct map *map, int row, int col, char value):&#160;map.c'],['../map_8h.html#a5ca3d8d5d1de033c5b21bc53f97a2767',1,'map_edit(struct map *map, int row, int col, char value):&#160;map.c']]],
+  ['map_5ffree',['map_free',['../map_8c.html#a997021ee7db23ab10f1a9631f892830d',1,'map_free(struct map *map):&#160;map.c'],['../map_8h.html#a997021ee7db23ab10f1a9631f892830d',1,'map_free(struct map *map):&#160;map.c']]],
+  ['map_5fprint',['map_print',['../pacman_8c.html#a7b536e07ad37d456513d209f553ee381',1,'pacman.c']]],
+  ['map_5fread',['map_read',['../map_8c.html#a20d928639ebd51bbe5c162522f986456',1,'map_read(struct map *map, char *filename, int num):&#160;map.c'],['../map_8h.html#a20d928639ebd51bbe5c162522f986456',1,'map_read(struct map *map, char *filename, int num):&#160;map.c']]],
+  ['map_5fread_5fstring',['map_read_string',['../map_8c.html#a1e556d76510b9635b3fe6b3d6ddafb97',1,'map.c']]],
+  ['map_5fwrite',['map_write',['../map_8c.html#a1e5519b006b9d17013452a0b277d4e6e',1,'map_write(struct map *map, int num):&#160;map.c'],['../map_8h.html#a1e5519b006b9d17013452a0b277d4e6e',1,'map_write(struct map *map, int num):&#160;map.c']]],
+  ['move_2ec',['move.c',['../move_8c.html',1,'']]],
+  ['move_2eh',['move.h',['../move_8h.html',1,'']]],
+  ['movebydirection',['moveByDirection',['../move_8c.html#a8c02fa03bcdbd4dbb282be57c6e245bd',1,'moveByDirection(struct pg *pg):&#160;move.c'],['../move_8h.html#a8c02fa03bcdbd4dbb282be57c6e245bd',1,'moveByDirection(struct pg *pg):&#160;move.c']]],
+  ['movedown',['moveDown',['../move_8c.html#a8a6ba89a9045eecafdf4d7443b6498be',1,'moveDown(struct pg *pg, char item):&#160;move.c'],['../move_8h.html#a5161a893ac4d23ae0a2e70a689e3b091',1,'moveDown(struct pg *pac, char item):&#160;move.c']]],
+  ['moveg',['moveG',['../move_8c.html#a7e7aeb00e8b22aa99a5c7dcb0e54b598',1,'moveG(struct pg *ghost, char direction):&#160;move.c'],['../move_8h.html#a7e7aeb00e8b22aa99a5c7dcb0e54b598',1,'moveG(struct pg *ghost, char direction):&#160;move.c']]],
+  ['moveghost1',['moveghost1',['../move_8c.html#a16046f12e4e54394b39993e172c49217',1,'moveghost1(struct pg *ghost, struct pg *pac):&#160;move.c'],['../move_8h.html#a16046f12e4e54394b39993e172c49217',1,'moveghost1(struct pg *ghost, struct pg *pac):&#160;move.c']]],
+  ['moveghost2',['moveghost2',['../move_8c.html#ae4f84555dae10d2c5221c2bd8dcd1107',1,'moveghost2(struct pg *ghost, struct pg *pac):&#160;move.c'],['../move_8h.html#ad7c29f38dbc174504224ddbaac52b8a9',1,'moveghost2(struct pg *ghost2, struct pg *pac):&#160;move.c']]],
+  ['moveghost3',['moveghost3',['../move_8c.html#a5ac4572d30c395583561fafeb8082b5b',1,'moveghost3(struct pg *ghost, struct pg *pacman):&#160;move.c'],['../move_8h.html#a5ac4572d30c395583561fafeb8082b5b',1,'moveghost3(struct pg *ghost, struct pg *pacman):&#160;move.c']]],
+  ['moveghost4',['moveghost4',['../move_8c.html#a87d849032ca0566fef15ec465f201651',1,'moveghost4(struct pg *ghost4, struct pg *ghost1, struct pg *ghost2, struct pg *ghost3, struct pg *pacman, struct sll *pac_path, int cal_pacpath):&#160;move.c'],['../move_8h.html#a43f6377dc6809fb687e872670b830ec1',1,'moveghost4(struct pg *ghost4, struct pg *ghost1, struct pg *ghost2, struct pg *ghost3, struct pg *pacman, struct sll *pac_path, int cal_pac):&#160;move.c']]],
+  ['moveleft',['moveLeft',['../move_8c.html#a7a96889422daf230003c66f341496018',1,'moveLeft(struct pg *pg, char item):&#160;move.c'],['../move_8h.html#a59ee99cf038c1bc36aa21b12d7ea0809',1,'moveLeft(struct pg *pac, char item):&#160;move.c']]],
+  ['movep',['moveP',['../move_8c.html#a3b44a12bac0ab70427c1ac598232d1a4',1,'moveP(struct pg *pac, char direction):&#160;move.c'],['../move_8h.html#a3b44a12bac0ab70427c1ac598232d1a4',1,'moveP(struct pg *pac, char direction):&#160;move.c']]],
+  ['movepacman',['movePacman',['../move_8c.html#ace22fd8991806ae98107c486cf2feaf4',1,'movePacman(struct pg *pac, char item):&#160;move.c'],['../move_8h.html#ace22fd8991806ae98107c486cf2feaf4',1,'movePacman(struct pg *pac, char item):&#160;move.c']]],
+  ['moveright',['moveRight',['../move_8c.html#aa23d0e9e6d31f70779ff7d2d3bf7c0d7',1,'moveRight(struct pg *pg, char item):&#160;move.c'],['../move_8h.html#ae22d39fd6181e184fd226505254c1d9a',1,'moveRight(struct pg *pac, char item):&#160;move.c']]],
+  ['moveup',['moveUp',['../move_8c.html#a6990d91b6703300231dc962e8adca36a',1,'moveUp(struct pg *pg, char item):&#160;move.c'],['../move_8h.html#a052fdf01af6ea71fdefcca7f81cdd960',1,'moveUp(struct pg *pac, char item):&#160;move.c']]]
+];
